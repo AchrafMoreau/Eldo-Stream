@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Light Theme (Base) */
+    --background: 0 0% 100%; /* White */
+    --foreground: 240 29% 14%; /* Navy Blue (#1A1A2E) */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 240 29% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 29% 14%;
+    --primary: 195 100% 50%; /* Electric Blue (#00C2FF) */
+    --primary-foreground: 240 29% 14%; /* Navy Blue text */
+    --secondary: 215 38% 28%; /* Deep Blue (#2D4263) */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 0 0% 96.1%; /* Light Gray */
+    --muted-foreground: 240 29% 14%;
+    --accent: 11 100% 58%; /* Vivid Red (#FF4B2B) */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 11 100% 58%; /* Vivid Red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 240 29% 14%; /* Navy Blue focus ring */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    /* Sidebar (Light Mode) */
+    --sidebar-background: 0 0% 98%; /* Off-white */
+    --sidebar-foreground: 240 29% 14%; /* Navy Blue */
+    --sidebar-primary: 195 100% 50%; /* Electric Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 11 100% 58%; /* Vivid Red */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 195 100% 50%; /* Electric Blue */
+  }
+
+  .dark {
+    /* Dark Theme */
+    --background: 240 29% 14%; /* Navy Blue (#1A1A2E) */
+    --foreground: 0 0% 98%; /* White */
+    --card: 240 29% 14%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 29% 14%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 195 100% 50%; /* Electric Blue */
+    --primary-foreground: 240 29% 14%; /* Navy Blue */
+    --secondary: 215 38% 28%; /* Deep Blue (#2D4263) */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 29% 20%; /* Darker Navy */
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 11 100% 58%; /* Vivid Red */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 11 100% 40%; /* Darker Red */
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 38% 28%; /* Deep Blue */
+    --input: 215 38% 28%;
+    --ring: 195 100% 50%; /* Electric Blue focus ring */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    /* Sidebar (Dark Mode) */
+    --sidebar-background: 215 38% 28%; /* Deep Blue */
+    --sidebar-foreground: 0 0% 98%; /* White */
+    --sidebar-primary: 195 100% 50%; /* Electric Blue */
+    --sidebar-primary-foreground: 240 29% 14%; /* Navy Blue */
+    --sidebar-accent: 11 100% 58%; /* Vivid Red */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 29% 20%; /* Darker Navy */
+    --sidebar-ring: 195 100% 50%; /* Electric Blue */
+  }
+  h1 {
+    font-size: 2.5rem; /* Adjust as needed */
+    font-weight: bold;
+    font-family: "Lora", serif;
+
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Lora", serif;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    font-family: "Lora", serif;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-family: "Lora", serif;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    font-family: "Lora", serif;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-family: "Lora", serif;
+  }
+  p{
+    font-family: "Roboto", sans-serif;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
