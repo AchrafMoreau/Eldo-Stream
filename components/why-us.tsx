@@ -62,7 +62,7 @@ export default function WhyUs() {
   }
 
   return (
-    <section id="why-us" className="w-full py-20">
+    <section id="why-us" className="w-full py-20 px-10 md:px-20">
       <div className="container px-4 md:px-6 mx-auto">
         <div ref={ref} className="text-center mb-12">
           <motion.h2

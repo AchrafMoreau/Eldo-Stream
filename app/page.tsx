@@ -70,14 +70,12 @@ export default function Home() {
       <Navbar />
       <LenisProvider />
       <HeroSection />
-      <div className="px-10 md:px-20">
-        <AboutSection />
-        <PackagePlans />
-        <HowToUse />
-        <WhyUs />
-        <SeoStatus />
-        <Testimonials />
-      </div>
+      <AboutSection />
+      <PackagePlans />
+      <HowToUse />
+      <WhyUs />
+      <SeoStatus />
+      <Testimonials />
       <Footer />
     </main>
   )

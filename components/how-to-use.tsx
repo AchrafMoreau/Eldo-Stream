@@ -37,7 +37,7 @@ export default function HowToUse() {
   ]
 
   return (
-    <section id="how-to-use" className="w-full py-20 ">
+    <section id="how-to-use" className="w-full py-20 px-10 md:px-20 bg-gradient-to-t from-background to-slate-100 dark:from-background dark:to-slate-900">
       <div className="container px-4 md:px-6 mx-auto">
         <div ref={ref} className="text-center mb-16">
           <motion.h2

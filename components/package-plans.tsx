@@ -1,162 +1,179 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
+import { Check, Star, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Check } from "lucide-react"
 
 export default function PackagePlans() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const features = [
+    "+25,000 TV Channels",
+    "+66,000 Movies & Series",
+    "4K / Ultra HD Picture Quality",
+    "FREE Channels & VOD Updates",
+    "99.9% Server Uptime",
+    "Antifreeze​",
+    "All Devices are Supported",
+    "Adult content",
+    "24/7 Technical Assistance",
+  ]
 
   const plans = [
     {
-      name: "Basic",
-      price: "$9.99",
-      period: "month",
-      description: "Perfect for casual viewers",
-      features: [
-        "5,000+ Live TV Channels",
-        "Standard Definition Quality",
-        "7-Day EPG (Electronic Program Guide)",
-        "Access on 1 Device",
-        "Basic Support",
-      ],
+      name: "1 Month",
+      price: 19.99,
+      regularPrice: 19.99,
+      description: "Perfect for trying out our service",
       popular: false,
-      buttonText: "Get Started",
+      savings: null,
+      features: features,
     },
     {
-      name: "Premium",
-      price: "$19.99",
-      period: "month",
-      description: "Our most popular package",
-      features: [
-        "10,000+ Live TV Channels",
-        "HD & Full HD Quality",
-        "14-Day EPG (Electronic Program Guide)",
-        "Access on 2 Devices",
-        "VOD Library Access",
-        "24/7 Priority Support",
-        "Multi-language Subtitles",
-      ],
+      name: "3 Months",
+      price: 49.99,
+      regularPrice: 59.97, // 19.99 * 3
+      description: "Our most popular short-term plan",
       popular: true,
-      buttonText: "Get Premium",
+      savings: "Save 17%",
+      features: features,
     },
     {
-      name: "Ultimate",
-      price: "$29.99",
-      period: "month",
-      description: "For the ultimate entertainment experience",
-      features: [
-        "15,000+ Live TV Channels",
-        "4K Ultra HD Quality",
-        "30-Day EPG (Electronic Program Guide)",
-        "Access on 5 Devices",
-        "Premium VOD Library",
-        "24/7 VIP Support",
-        "Multi-language Subtitles",
-        "Catch-up TV (7 days)",
-        "Recording Feature",
-      ],
+      name: "6 Months",
+      price: 89.99,
+      regularPrice: 119.94, // 19.99 * 6
+      description: "Great value for medium-term use",
       popular: false,
-      buttonText: "Get Ultimate",
+      savings: "Save 25%",
+      features: features,
+    },
+    {
+      name: "12 Months",
+      price: 149.99,
+      regularPrice: 239.88, // 19.99 * 12
+      description: "Best value for long-term commitment",
+      popular: false,
+      savings: "Save 37%",
+      features: features,
     },
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  }
+
   return (
-    <section id="plans" className="w-full py-20">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div ref={ref} className="text-center mb-12">
+    <section id="plans" className="py-20 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 px-10 md:px-15">
+      <div className="container px-4 md:px-6">
+        <div className="text-center space-y-4 mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            className="text-4xl md:text-5xl font-bold tracking-tighter"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gradient-primary"
           >
-            Package Plans
+            Choose Your Perfect Plan
           </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isInView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="h-1 w-20 bg-primary mx-auto my-4"
-          />
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed"
+            className="text-muted-foreground text-xl max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Choose the perfect plan for your entertainment needs. All plans include a 7-day money-back guarantee.
+            Unlock premium entertainment with our flexible subscription options
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {plans.map((plan, index) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-            >
+            <motion.div key={plan.name} variants={itemVariants} className="h-full">
               <Card
-                className={`h-full flex flex-col card-hover ${
-                  plan.popular ? "border-primary shadow-lg relative overflow-hidden" : ""
+                className={`h-full flex flex-col relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 ${
+                  plan.popular ? "border-primary shadow-lg" : ""
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute top-0 right-0">
-                    <Badge className="rounded-tl-none rounded-br-none rounded-tr-md rounded-bl-md bg-primary text-primary-foreground">
-                      Most Popular
-                    </Badge>
+                    <div className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1">
+                      <Star className="h-3 w-3 fill-current" />
+                      POPULAR
+                    </div>
                   </div>
                 )}
-                <CardHeader>
-                  <CardTitle>{plan.name}</CardTitle>
-                  <CardDescription>{plan.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold text-primary">{plan.price}</span>
-                    <span className="text-muted-foreground">/{plan.period}</span>
+                {plan.savings && (
+                  <div className="absolute top-0 left-0">
+                    <div className="bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1 rounded-br-lg flex items-center gap-1">
+                      <Zap className="h-3 w-3" />
+                      {plan.savings}
+                    </div>
                   </div>
+                )}
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-2xl !mt-5" style={{marginTop:"10px"}}>{plan.name}</CardTitle>
+                  <CardDescription>{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <ul className="space-y-2">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <Check className="mr-2 h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                <CardContent className="pb-4 flex-1">
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold">${plan.price}</span>
+                    <div className="text-muted-foreground text-sm mt-1">
+                      {plan.savings && <span className="line-through">${plan.regularPrice.toFixed(2)}</span>}
+                    </div>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
                 <CardFooter>
                   <Button
-                    className={`w-full ${plan.popular ? "bg-primary hover:bg-primary/90 text-primary-foreground" : ""}`}
+                    className={`w-full ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}
                     variant={plan.popular ? "default" : "outline"}
                     size="lg"
                   >
-                    {plan.buttonText}
+                    Buy Now
                   </Button>
                 </CardFooter>
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-12 text-center"
+          className="text-center mt-12 text-muted-foreground"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
         >
-          <p className="text-muted-foreground mb-4">Need a custom plan for business or resellers?</p>
-          <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/10">
-            Contact Sales
-          </Button>
+          <p>All plans include a 7-day money-back guarantee. No questions asked.</p>
         </motion.div>
       </div>
     </section>
   )
 }
+

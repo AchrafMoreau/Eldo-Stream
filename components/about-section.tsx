@@ -29,7 +29,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="about" className="w-full py-20">
+    <section id="about" className="w-full py-20 px-10 md:px-20 bg-gradient-to-b from-background to-slate-50 dark:from-background dark:to-slate-950">
       <div className="container px-4 md:px-6 mx-auto">
         <div ref={ref} className="text-center mb-12">
           <motion.h2
@@ -124,16 +124,16 @@ export default function AboutSection() {
           >
             <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/placeholder.svg?height=1000&width=800"
+                src="/eldo-stream-tv.png"
                 alt="Our team at work"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-background/80 backdrop-blur-sm p-4 rounded-xl">
-                  <p className="font-medium text-lg">
-
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent " />
+              <div className="absolute bottom-6 left-6 right-6 ">
+                <div className="backdrop-blur-lg p-4 rounded-xl">
+                  <p className="text-white font-medium text-lg">
+                    "Our mission is to provide the most comprehensive and reliable IPTV service in the industry."
                   </p>
                   <p className="text-primary font-bold mt-2">— Eldo-Stream CEO & Founder</p>
                 </div>

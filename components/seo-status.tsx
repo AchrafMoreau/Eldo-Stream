@@ -53,7 +53,7 @@ export default function SeoStatus() {
   ]
 
   return (
-    <section ref={ref} className="w-full py-16 bg-background">
+    <section ref={ref} className="w-full py-16 bg-background px-10 md:px-20">
       <div className="container px-4 md:px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
