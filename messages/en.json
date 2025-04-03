@@ -1,0 +1,50 @@
+{
+    "english": "English",
+    "french": "French",
+    "spanish": "Spanish",
+    "dutch": "Dutch",
+    "italy": "Italy",
+    "hero": {
+        "title": "Unlimited",
+        "finger": "at Your Fingertips",
+        "entertainment": "Entertainment",
+        "description": "Access thousands of live TV channels, Movies, TV Shows and shows from around the world. High-definition quality, reliable streams, and 24/7 customer support.",
+        "buttons": {
+        "buyNow": "Buy It Now",
+        "freeTrial": "Free Trial"
+        },
+        "loading": {
+            "message": "Loading amazing content for you..."
+        }
+    },
+    "aboutUs":{
+        "title": "Who We Are",
+        "description": "We are a leading provider of premium IPTV services, dedicated to bringing you the best entertainment experience possible. With years of industry expertise, we deliver reliable, high-quality streaming solutions to customers worldwide.",
+        "features": {
+        "premiumContent": {
+            "title": "Premium Content",
+            "description": "Access to over 10,000 live TV channels from around the world, including sports, news, entertainment, and more."
+        },
+        "onDemandLibrary": {
+            "title": "On-Demand Library",
+            "description": "Extensive collection of movies and TV shows available on-demand, updated regularly with the latest releases."
+        },
+        "globalCoverage": {
+            "title": "Global Coverage",
+            "description": "Content from all major countries and regions, with multi-language support and international channels."
+        },
+        "reliableService": {
+            "title": "Reliable Service",
+            "description": "99.9% uptime guarantee with redundant servers, ensuring your entertainment is always available."
+        }
+        },
+        "missionStatement": {
+        "quote": "Our mission is to provide the most comprehensive and reliable IPTV service in the industry.",
+        "author": "— Eldo-Stream CEO & Founder"
+        },
+        "experience": {
+        "years": "10+",
+        "label": "Years Experience"
+        }
+    }
+}

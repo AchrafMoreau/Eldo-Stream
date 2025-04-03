@@ -4,10 +4,12 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Tv, Film, Globe, Shield } from "lucide-react"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 
 export default function AboutSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const t = useTranslations("aboutUs")
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,7 +40,7 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gradient-primary"
           >
-            Who We Are
+            {t('title')}
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
@@ -52,9 +54,7 @@ export default function AboutSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed"
           >
-            We are a leading provider of premium IPTV services, dedicated to bringing you the best entertainment
-            experience possible. With years of industry expertise, we deliver reliable, high-quality streaming solutions
-            to customers worldwide.
+            {t('description')}
           </motion.p>
         </div>
 
@@ -70,10 +70,11 @@ export default function AboutSection() {
                 <Tv className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Premium Content</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  {t('features.premiumContent.title')}
+                </h3>
                 <p className="text-muted-foreground">
-                  Access to over 10,000 live TV channels from around the world, including sports, news, entertainment,
-                  and more.
+                  {t('features.premiumContent.description')}
                 </p>
               </div>
             </motion.div>
@@ -83,10 +84,11 @@ export default function AboutSection() {
                 <Film className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">On-Demand Library</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  {t('features.onDemandLibrary.title')}
+                </h3>
                 <p className="text-muted-foreground">
-                  Extensive collection of movies and TV shows available on-demand, updated regularly with the latest
-                  releases.
+                  {t('features.onDemandLibrary.description')}
                 </p>
               </div>
             </motion.div>
@@ -96,9 +98,11 @@ export default function AboutSection() {
                 <Globe className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Global Coverage</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  {t('features.globalCoverage.title')}
+                </h3>
                 <p className="text-muted-foreground">
-                  Content from all major countries and regions, with multi-language support and international channels.
+                  {t('features.globalCoverage.description')}
                 </p>
               </div>
             </motion.div>
@@ -108,9 +112,11 @@ export default function AboutSection() {
                 <Shield className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Reliable Service</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  {t('features.reliableService.title')}
+                </h3>
                 <p className="text-muted-foreground">
-                  99.9% uptime guarantee with redundant servers, ensuring your entertainment is always available.
+                  {t('features.reliableService.description')}
                 </p>
               </div>
             </motion.div>
@@ -133,17 +139,21 @@ export default function AboutSection() {
               <div className="absolute bottom-6 left-6 right-6 ">
                 <div className="backdrop-blur-lg p-4 rounded-xl">
                   <p className="text-white font-medium text-lg">
-                    "Our mission is to provide the most comprehensive and reliable IPTV service in the industry."
+                    {t('missionStatement.quote')}
                   </p>
-                  <p className="text-primary font-bold mt-2">— Eldo-Stream CEO & Founder</p>
+                  <p className="text-primary font-bold mt-2">
+                    {t('missionStatement.author')}
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="absolute -top-6 p-3 -left-6 h-24 w-24 bg-accent rounded-lg flex items-center justify-center text-accent-foreground">
               <div className="text-center">
-                <div className="text-3xl font-bold">10+</div>
-                <div className="text-xs">Years Experience</div>
+                <div className="text-3xl font-bold">{t('experience.years')}</div>
+                <div className="text-xs">
+                  {t('experience.label')}
+                </div>
               </div>
             </div>
           </motion.div>

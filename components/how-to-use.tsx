@@ -14,25 +14,19 @@ export default function HowToUse() {
       icon: <Download className="h-10 w-10" />,
       title: "Subscribe & Download",
       description: "Choose your plan and download our app on your preferred device.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/step1.png",
     },
     {
       icon: <Settings className="h-10 w-10" />,
       title: "Setup Your Account",
       description: "Enter your credentials and configure your preferences for the best experience.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/step2.jpg",
     },
     {
       icon: <Tv className="h-10 w-10" />,
       title: "Browse Channels",
       description: "Explore our extensive library of channels, movies, and shows.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      icon: <Play className="h-10 w-10" />,
-      title: "Enjoy Streaming",
-      description: "Start watching your favorite content in high definition quality.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/step3.jpg",
     },
   ]
 

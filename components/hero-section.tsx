@@ -1,15 +1,15 @@
 "use client";
 import { getPopularMovies, getPopularTvShow } from "@/lib/tmdb";
 import { ThreeDMarquee } from "./ui/3d-marque";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight, Loader2 } from 'lucide-react';
+import { useTranslations } from "next-intl";
 
-export default function HeroSection() {
-  const [tv, setTv] = useState([]);
-  const [movies, setMovies] = useState([]);
+function HeroSection() {
   const [isLoading, setIsLoading] = useState(true);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [images, setImages] = useState([])
+  const t = useTranslations('hero')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,48 +19,23 @@ export default function HeroSection() {
           getPopularMovies()
         ]);
         
-        setTv(tvData.results);
-        setMovies(moviesData.results);
-        setIsLoading(false);
+        setImages([
+          ...moviesData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...tvData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...moviesData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...tvData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`)
+        ])
       } catch (error) {
         console.error("Error fetching data:", error);
-        setIsLoading(false);
+      }finally{
+        setIsLoading(false)
       }
     };
 
     fetchData();
   }, []);
 
-  useEffect(() => {
-    if (!isLoading && (movies.length > 0 || tv.length > 0)) {
-      // Preload images
-      const imageUrls = [
-        ...movies.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
-        ...tv.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
-      ];
-      
-      let loadedCount = 0;
-      const totalImages = imageUrls.length;
-      
-      imageUrls.forEach((src) => {
-        const img = new Image();
-        img.crossOrigin = "anonymous";
-        img.onload = () => {
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-        };
-        img.onerror = () => {
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-        };
-        img.src = src;
-      });
-    }
-  }, [isLoading, movies, tv]);
+
 
   const handelFreeTrail = () => {
     const formattedPhone = "+212713720920";
@@ -70,35 +45,19 @@ export default function HeroSection() {
     window.open(whatsappUrl, "_blank");
   };
 
-  const images = [
-    ...movies.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
-    ...tv.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
-  ];
 
-  if (isLoading || !imagesLoaded) {
-    return (
-      <div className="flex h-screen w-full items-center justify-center bg-black">
-        <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-12 w-12 animate-spin text-primary" />
-          <p className="text-neutral-200">Loading amazing content for you...</p>
-        </div>
-      </div>
-    );
-  }
-
-  return (
+  return  (
     <section id="home">
-      <div className="relative mx-auto flex h-screen w-full flex-col items-center justify-center overflow-hidden">
+      <div className="relative mx-auto flex h-[90vh] w-full flex-col items-center justify-center overflow-hidden hero ">
         <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl !leading-[50px] md:!leading-[70px]">
-          Unlimited{" "}
+          {t('title')} {" "}
           <span className="relative z-20 inline-block rounded-xl bg-primary/40 px-4 py-1 text-white underline decoration-primary decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
-            Entertainment
+            {t('entertainment')}
           </span>{" "}
-          at Your Fingertips
+          {t("finger")}
         </h2>
         <p className="relative z-20 mx-auto max-w-2xl py-5 text-center text-sm text-neutral-200 md:text-base">
-          Access thousands of live TV channels, Movies, Tv Show and shows from around the world. High-definition quality,
-          reliable streams, and 24/7 customer support.
+          {t('description')}
         </p>
 
         <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -116,21 +75,23 @@ export default function HeroSection() {
               }
             }}
           >
-            Buy It Now
+            {t('buttons.buyNow')}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
           <button
             onClick={handelFreeTrail}
             className="rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none"
           >
-            Free Trail
+            {t('buttons.freeTrial')}
           </button>
         </div>
 
         {/* overlay */}
         <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/80" />
-        <ThreeDMarquee className="pointer-events-none absolute inset-0 h-full w-full" images={images} />
+        {images.length > 0 && <ThreeDMarquee className="pointer-events-none absolute inset-0 h-full w-full" images={images} />}
       </div>
     </section>
   );
 }
+
+export default memo(HeroSection)

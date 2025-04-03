@@ -1,12 +1,19 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useTransition } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "./ui/toggel-mode"
+import Image from "next/image"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import LoadingOverlay from "./loading"
+import { usePathname } from "@/i18n/navigation"
+import { useRouter } from "next/navigation"
+import { useLocale } from "next-intl"
+import { useTranslations } from "use-intl"
 
 // Throttle function to limit how often a function can be called
 function throttle(func: Function, delay: number) {
@@ -39,48 +46,15 @@ export default function Navbar() {
 
   // Handle scroll events with throttling for better performance
   useEffect(() => {
-    const handleScroll = throttle(() => {
-      // Calculate scroll progress for potential visual effects
-      const scrollY = window.scrollY
-      const docHeight = document.body.scrollHeight - window.innerHeight
-      const progress = scrollY / docHeight
-      setScrollProgress(progress)
-
-      // Change navbar background with a threshold
-      setIsScrolled(scrollY > 10)
-
-      // Update active section based on scroll position with improved detection
-      const sections = ["home", "about", "plans", "how-to-use", "why-us", "testimonials"]
-
-      // Find the section that is currently most visible in the viewport
-      let currentSection = "home"
-      let maxVisibility = 0
-
-      sections.forEach((sectionId) => {
-        const element = document.getElementById(sectionId)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          const viewportHeight = window.innerHeight
-
-          // Calculate how much of the section is visible in the viewport
-          const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0)
-          const visibleRatio = visibleHeight / element.offsetHeight
-
-          if (visibleRatio > maxVisibility && visibleRatio > 0.2) {
-            maxVisibility = visibleRatio
-            currentSection = sectionId
-          }
-        }
-      })
-
-      if (currentSection !== activeSection) {
-        setActiveSection(currentSection)
-      }
-    }, 100) // Throttle to run at most every 100ms
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [activeSection])
+  }, [])
+
+
 
   const navItems = [
     { label: "Home", id: "home" },
@@ -113,7 +87,6 @@ export default function Navbar() {
                 isScrolled ? "text-foreground" : "text-white",
               )}
             >
-              IPTV Premium
             </span>
           </Link>
 
@@ -140,20 +113,19 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex md:gap-4 md:items-center">
-            <Button
-              size="sm"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-md hover:scale-105"
-            >
-              Get Started
-            </Button>
-            <ModeToggle />
-          </div>
 
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="flex items-center gap-2">
+            <Button
+              size="sm"
+              className="md:block bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-md hover:scale-105"
+            >
+              Get Started
+            </Button>
+            <LanguageSelector />
+            <ModeToggle />
+
             <Sheet>
               <SheetTrigger asChild>
                 <Button
@@ -185,11 +157,6 @@ export default function Navbar() {
                       {activeSection === item.id && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />}
                     </button>
                   ))}
-                  <div className="pt-4 mt-4 border-t">
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300">
-                      Get Started
-                    </Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -200,3 +167,66 @@ export default function Navbar() {
   )
 }
 
+
+
+function LanguageSelector() {
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  const pathname = usePathname();
+  const localeActive = useLocale();
+  const t = useTranslations();
+
+  const onSelectChange = (nextLocale: string) => {
+    startTransition(() => {
+      const newPathname = pathname.replace(/^\/(en|fr|es|de|it)/, '');
+      router.replace(`/${nextLocale}${newPathname}`);
+    });
+  };
+
+  const getFlag = () => {
+    switch(localeActive) {
+      case "fr": return "/fr.svg";
+      case "es": return "/es.svg";
+      case "de": return "/de.svg";
+      case "it": return "/it.svg";
+      default: return "/gb.svg";
+    }
+  };
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" className="bg-background border-transparent" size="icon">
+          <Image
+            src={getFlag()}
+            alt="Language"
+            width={20}
+            height={20}
+          />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => onSelectChange("en")}>
+          <Image src="/gb.svg" width={20} height={20} alt="English" className="mr-2" />
+          {t("english")}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => onSelectChange("es")}>
+          <Image src="/es.svg" width={20} height={20} alt="Spanish" className="mr-2" />
+          {t("spanish")}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => onSelectChange("fr")}>
+          <Image src="/fr.svg" width={20} height={20} alt="French" className="mr-2" />
+          {t("french")}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => onSelectChange("de")}>
+          <Image src="/de.svg" width={20} height={20} alt="German" className="mr-2" />
+          {t("dutch")}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => onSelectChange("it")}>
+          <Image src="/it.svg" width={20} height={20} alt="Italian" className="mr-2" />
+          {t("italy")}
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}

@@ -10,6 +10,7 @@ import Footer from "@/components/footer"
 import SchemaMarkup from "@/components/schema-markup"
 import Navbar from "@/components/navbar"
 import LenisProvider from "@/components/lein-provider"
+import MoviesSlide from "@/components/movies-slide"
 
 // Enhanced metadata for better SEO
 export const metadata: Metadata = {
@@ -71,6 +72,7 @@ export default function Home() {
       <LenisProvider />
       <HeroSection />
       <AboutSection />
+      <MoviesSlide />
       <PackagePlans />
       <HowToUse />
       <WhyUs />

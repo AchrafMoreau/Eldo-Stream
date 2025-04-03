@@ -5,8 +5,9 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import OptimizedImage from "../optimaze-image"
+import { memo } from "react"
 
-export const ThreeDMarquee = ({
+const ThreeDMarqueeComponent = ({
   images,
   className,
 }: {
@@ -14,8 +15,8 @@ export const ThreeDMarquee = ({
   className?: string
 }) => {
   // Split the images array into 8 equal parts instead of 4
-  const chunkSize = Math.ceil(images.length / 8)
-  const chunks = Array.from({ length: 8 }, (_, colIndex) => {
+  const chunkSize = Math.ceil(images.length / 12)
+  const chunks = Array.from({ length: 12 }, (_, colIndex) => {
     const start = colIndex * chunkSize
     return images.slice(start, start + chunkSize)
   })
@@ -32,7 +33,6 @@ export const ThreeDMarquee = ({
           >
             {chunks.map((subarray, colIndex) => (
               <motion.div
-                animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
                 transition={{
                   duration: colIndex % 2 === 0 ? 10 : 15,
                   repeat: Number.POSITIVE_INFINITY,
@@ -135,3 +135,4 @@ const GridLineVertical = ({
   )
 }
 
+export const ThreeDMarquee = memo(ThreeDMarqueeComponent)

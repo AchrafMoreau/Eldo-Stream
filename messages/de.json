@@ -1,0 +1,50 @@
+{
+    "english": "Englisch",
+    "french": "Französisch",
+    "spanish": "Spanisch",
+    "dutch": "Niederländisch",
+    "italy": "Italienisch",
+    "hero": {
+        "title": "Unbegrenzt",
+        "finger": "an Ihren Fingerspitzen",
+        "entertainment": "Unterhaltung",
+        "description": "Zugriff auf Tausende von Live-TV-Kanälen, Filmen, TV-Sendungen und Shows aus der ganzen Welt. Hochauflösende Qualität, zuverlässige Streams und 24/7-Kundensupport.",
+        "buttons": {
+            "buyNow": "Jetzt Kaufen",
+            "freeTrial": "Kostenlose Testversion"
+        },
+        "loading": {
+            "message": "Lade beeindruckende Inhalte für Sie..."
+        }
+    },
+    "aboutUs": {
+        "title": "Wer Wir Sind",
+        "description": "Wir sind ein führender Anbieter von Premium-IPTV-Diensten, der Ihnen das bestmögliche Unterhaltungserlebnis bietet. Mit jahrelanger Branchenerfahrung liefern wir zuverlässige, hochwertige Streaming-Lösungen für Kunden weltweit.",
+        "features": {
+        "premiumContent": {
+            "title": "Premium-Inhalte",
+            "description": "Zugang zu über 10.000 Live-TV-Kanälen aus der ganzen Welt, einschließlich Sport, Nachrichten, Unterhaltung und mehr."
+        },
+        "onDemandLibrary": {
+            "title": "On-Demand-Bibliothek",
+            "description": "Umfangreiche Sammlung von Filmen und Fernsehsendungen auf Abruf, regelmäßig aktualisiert mit den neuesten Veröffentlichungen."
+        },
+        "globalCoverage": {
+            "title": "Globale Abdeckung",
+            "description": "Inhalte aus allen wichtigen Ländern und Regionen mit mehrsprachiger Unterstützung und internationalen Kanälen."
+        },
+        "reliableService": {
+            "title": "Zuverlässiger Service",
+            "description": "99,9% Betriebszeitgarantie mit redundanten Servern, die sicherstellen, dass Ihre Unterhaltung immer verfügbar ist."
+        }
+        },
+        "missionStatement": {
+        "quote": "Unsere Mission ist es, den umfassendsten und zuverlässigsten IPTV-Service der Branche anzubieten.",
+        "author": "— Eldo-Stream CEO & Gründer"
+        },
+        "experience": {
+        "years": "10+",
+        "label": "Jahre Erfahrung"
+        }
+    }
+}

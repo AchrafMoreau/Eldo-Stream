@@ -1,0 +1,50 @@
+{
+    "english": "Inglés",
+    "french": "Francés",
+    "spanish": "Español",
+    "dutch": "Holandés",
+    "italy": "Italiano",
+    "hero": {
+        "title": "Ilimitado",
+        "finger": "a tu Alcance",
+        "entertainment": "Entretenimiento",
+        "description": "Accede a miles de canales de TV en vivo, películas, programas de TV y espectáculos de todo el mundo. Calidad en alta definición, transmisiones confiables y soporte al cliente 24/7.",
+        "buttons": {
+            "buyNow": "Comprar Ahora",
+            "freeTrial": "Prueba Gratis"
+        },
+        "loading": {
+            "message": "Cargando contenido increíble para ti..."
+        }
+    },
+    "aboutUs": {
+        "title": "Quiénes Somos",
+        "description": "Somos un proveedor líder de servicios IPTV premium, dedicados a brindarte la mejor experiencia de entretenimiento posible. Con años de experiencia en la industria, ofrecemos soluciones de transmisión confiables y de alta calidad a clientes en todo el mundo.",
+        "features": {
+        "premiumContent": {
+            "title": "Contenido Premium",
+            "description": "Acceso a más de 10,000 canales de TV en vivo de todo el mundo, incluyendo deportes, noticias, entretenimiento y más."
+        },
+        "onDemandLibrary": {
+            "title": "Biblioteca bajo Demanda",
+            "description": "Amplia colección de películas y programas de TV disponibles bajo demanda, actualizados regularmente con los últimos lanzamientos."
+        },
+        "globalCoverage": {
+            "title": "Cobertura Global",
+            "description": "Contenido de todos los países y regiones principales, con soporte multilingüe y canales internacionales."
+        },
+        "reliableService": {
+            "title": "Servicio Confiable",
+            "description": "Garantía de 99.9% de tiempo de actividad con servidores redundantes, asegurando que tu entretenimiento esté siempre disponible."
+        }
+        },
+        "missionStatement": {
+        "quote": "Nuestra misión es proporcionar el servicio IPTV más completo y confiable de la industria.",
+        "author": "— CEO y Fundador de Eldo-Stream"
+        },
+        "experience": {
+        "years": "10+",
+        "label": "Años de Experiencia"
+        }
+    }
+}

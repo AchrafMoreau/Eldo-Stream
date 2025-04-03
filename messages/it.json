@@ -1,0 +1,50 @@
+{
+    "english": "Inglese",
+    "french": "Francese",
+    "spanish": "Spagnolo",
+    "dutch": "Olandese",
+    "italy": "Italiano",
+    "hero": {
+        "title": "Illimitato",
+        "finger": "a Portata di Mano",
+        "entertainment": "Intrattenimento",
+        "description": "Accedi a migliaia di canali TV live, film, serie TV e spettacoli da tutto il mondo. Qualità HD, streaming affidabile e supporto clienti 24/7.",
+        "buttons": {
+            "buyNow": "Acquista Ora",
+            "freeTrial": "Prova Gratuita"
+        },
+        "loading": {
+            "message": "Caricamento di contenuti fantastici per te..."
+        }
+    },
+    "aboutUs": {
+        "title": "Chi Siamo",
+        "description": "Siamo un fornitore leader di servizi IPTV premium, dedicato a offrirti la migliore esperienza di intrattenimento possibile. Con anni di esperienza nel settore, forniamo soluzioni di streaming affidabili e di alta qualità a clienti in tutto il mondo.",
+        "features": {
+        "premiumContent": {
+            "title": "Contenuto Premium",
+            "description": "Accesso a oltre 10.000 canali TV live da tutto il mondo, inclusi sport, notizie, intrattenimento e altro ancora."
+        },
+        "onDemandLibrary": {
+            "title": "Libreria On-Demand",
+            "description": "Vasta collezione di film e programmi TV disponibili on-demand, aggiornati regolarmente con le ultime uscite."
+        },
+        "globalCoverage": {
+            "title": "Copertura Globale",
+            "description": "Contenuti da tutti i principali paesi e regioni, con supporto multilingue e canali internazionali."
+        },
+        "reliableService": {
+            "title": "Servizio Affidabile",
+            "description": "Garanzia del 99,9% di uptime con server ridondanti, assicurando che il tuo intrattenimento sia sempre disponibile."
+        }
+        },
+        "missionStatement": {
+        "quote": "La nostra missione è fornire il servizio IPTV più completo e affidabile del settore.",
+        "author": "— CEO e Fondatore di Eldo-Stream"
+        },
+        "experience": {
+        "years": "10+",
+        "label": "Anni di Esperienza"
+        }
+    }
+}
