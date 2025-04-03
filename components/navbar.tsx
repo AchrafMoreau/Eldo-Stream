@@ -26,6 +26,18 @@ function throttle(func: Function, delay: number) {
     }
   }
 }
+// Utility function for smooth scrolling to sections
+export function smoothScrollToSection(sectionId: string) {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    const offsetTop = element.getBoundingClientRect().top + window.pageYOffset
+    window.scrollTo({
+      top: offsetTop - 80, // Account for navbar height
+      behavior: "smooth",
+    })
+  }
+}
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -46,13 +58,48 @@ export default function Navbar() {
 
   // Handle scroll events with throttling for better performance
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+    const handleScroll = throttle(() => {
+      // Calculate scroll progress for potential visual effects
+      const scrollY = window.scrollY
+      const docHeight = document.body.scrollHeight - window.innerHeight
+      const progress = scrollY / docHeight
+      setScrollProgress(progress)
+
+      // Change navbar background with a threshold
+      setIsScrolled(scrollY > 10)
+
+      // Update active section based on scroll position with improved detection
+      const sections = ["home", "about", "plans", "how-to-use", "why-us", "testimonials"]
+
+      // Find the section that is currently most visible in the viewport
+      let currentSection = "home"
+      let maxVisibility = 0
+
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          const viewportHeight = window.innerHeight
+
+          // Calculate how much of the section is visible in the viewport
+          const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0)
+          const visibleRatio = visibleHeight / element.offsetHeight
+
+          if (visibleRatio > maxVisibility && visibleRatio > 0.2) {
+            maxVisibility = visibleRatio
+            currentSection = sectionId
+          }
+        }
+      })
+
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection)
+      }
+    }, 100) // Throttle to run at most every 100ms
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [activeSection])
 
 
 
