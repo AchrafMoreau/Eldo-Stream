@@ -5,12 +5,12 @@ import PackagePlans from "@/components/package-plans"
 import HowToUse from "@/components/how-to-use"
 import WhyUs from "@/components/why-us"
 import Testimonials from "@/components/testimonials"
-import SeoStatus from "@/components/seo-status"
 import Footer from "@/components/footer"
 import SchemaMarkup from "@/components/schema-markup"
 import Navbar from "@/components/navbar"
 import LenisProvider from "@/components/lein-provider"
 import MoviesSlide from "@/components/movies-slide"
+import ChannelsSlide from "@/components/channels-slide"
 
 // Enhanced metadata for better SEO
 export const metadata: Metadata = {
@@ -71,12 +71,12 @@ export default function Home() {
       <Navbar />
       <LenisProvider />
       <HeroSection />
+      <ChannelsSlide />
       <AboutSection />
       <MoviesSlide />
       <PackagePlans />
       <HowToUse />
       <WhyUs />
-      <SeoStatus />
       <Testimonials />
       <Footer />
     </main>

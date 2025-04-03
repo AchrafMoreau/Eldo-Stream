@@ -4,28 +4,31 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import { Download, Tv, Settings, Play } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export default function HowToUse() {
+  const t = useTranslations("HowToUse")
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const stepTrans = t.raw('steps')
 
   const steps = [
     {
       icon: <Download className="h-10 w-10" />,
-      title: "Subscribe & Download",
-      description: "Choose your plan and download our app on your preferred device.",
+      title: stepTrans[0].title,
+      description: stepTrans[0].description,
       image: "/step1.png",
     },
     {
       icon: <Settings className="h-10 w-10" />,
-      title: "Setup Your Account",
-      description: "Enter your credentials and configure your preferences for the best experience.",
+      title: stepTrans[1].title,
+      description: stepTrans[1].description,
       image: "/step2.jpg",
     },
     {
       icon: <Tv className="h-10 w-10" />,
-      title: "Browse Channels",
-      description: "Explore our extensive library of channels, movies, and shows.",
+      title: stepTrans[2].title,
+      description: stepTrans[2].description,
       image: "/step3.jpg",
     },
   ]
@@ -40,7 +43,7 @@ export default function HowToUse() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gradient-primary"
           >
-            How To Use
+            {t('title')}
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
@@ -54,8 +57,7 @@ export default function HowToUse() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed"
           >
-            Getting started with our IPTV service is quick and easy. Follow these simple steps to begin your streaming
-            journey.
+            {t('subtitle')}
           </motion.p>
         </div>
 

@@ -46,5 +46,93 @@
         "years": "10+",
         "label": "Ans d'Expérience"
         }
+    },
+    "PackagePlans": {
+        "title": "Choisissez Votre Plan Parfait",
+        "subtitle": "Débloquez un divertissement premium avec nos options d'abonnement flexibles",
+        "features": [
+        "+25 000 chaînes TV",
+        "+66 000 films et séries",
+        "Qualité d'image 4K / Ultra HD",
+        "Mises à jour GRATUITES des chaînes et VOD",
+        "Temps de fonctionnement du serveur 99,9 %",
+        "Anti-gel",
+        "Tous les appareils sont pris en charge",
+        "Contenu pour adultes",
+        "Assistance technique 24h/24 et 7j/7"
+        ],
+        "plans": [
+        {
+            "name": "1 Mois",
+            "description": "Parfait pour essayer notre service",
+            "savings": null
+        },
+        {
+            "name": "3 Mois",
+            "description": "Notre plan à court terme le plus populaire",
+            "savings": "Économisez 17%"
+        },
+        {
+            "name": "6 Mois",
+            "description": "Excellent rapport qualité-prix pour une utilisation à moyen terme",
+            "savings": "Économisez 25%"
+        },
+        {
+            "name": "12 Mois",
+            "description": "Meilleur rapport qualité-prix pour un engagement à long terme",
+            "savings": "Économisez 37%"
+        }
+        ],
+        "popularBadge": "POPULAIRE",
+        "buyButton": "Acheter Maintenant",
+        "guaranteeText": "Tous les plans incluent une garantie de remboursement de 7 jours. Sans poser de questions."
+    },
+    "HowToUse": {
+        "title": "Comment Utiliser",
+        "subtitle": "Commencer avec notre service IPTV est rapide et facile. Suivez ces étapes simples pour débuter votre expérience de streaming.",
+        "steps": [
+        {
+            "title": "S'abonner & Télécharger",
+            "description": "Choisissez votre formule et téléchargez l'application IPTV sur votre appareil préféré."
+        },
+        {
+            "title": "Configurer Votre Compte",
+            "description": "Entrez vos identifiants et paramétrez vos préférences pour une expérience optimale."
+        },
+        {
+            "title": "Parcourir les Chaînes",
+            "description": "Découvrez notre vaste bibliothèque de chaînes, films et émissions."
+        }
+        ]
+    },
+    "WhyUs": {
+        "title": "Pourquoi Nous Choisir",
+        "subtitle": "Nous nous distinguons de la concurrence par nos fonctionnalités premium et notre engagement à fournir un service de qualité.",
+        "features": [
+        {
+            "title": "Streaming Haute Vitesse",
+            "description": "Profitez d'une diffusion sans tampon grâce à nos serveurs hautes performances répartis dans le monde entier."
+        },
+        {
+            "title": "Connexion Sécurisée",
+            "description": "Vos données et habitudes de visionnage sont protégées par nos connexions chiffrées et sécurisées."
+        },
+        {
+            "title": "Disponibilité 99,9%",
+            "description": "Profitez d'un divertissement sans interruption grâce à notre service fiable et notre infrastructure redondante."
+        },
+        {
+            "title": "Contenu Mondial",
+            "description": "Accédez à des chaînes et du contenu du monde entier, sans restrictions géographiques."
+        },
+        {
+            "title": "Support 24/7",
+            "description": "Notre équipe de support dédiée est disponible 24h/24 et 7j/7 pour vous aider en cas de problème."
+        },
+        {
+            "title": "Multi-Appareils",
+            "description": "Regardez sur votre TV, ordinateur, tablette, smartphone ou tout autre appareil compatible."
+        }
+        ]
     }
 }

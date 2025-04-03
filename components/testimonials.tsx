@@ -1,197 +1,172 @@
 "use client"
-
-import { useRef, useState } from "react"
-import { motion, useInView } from "framer-motion"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { Star } from "lucide-react"
+import { cn } from "@/lib/utils"
 
-export default function Testimonials() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Regular Viewer",
-      avatar: "/placeholder.svg?height=40&width=40",
-      content:
-        "I've tried several IPTV services, but this one stands out for its reliability and channel selection. The HD quality is consistently excellent, and I rarely experience any buffering issues.",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      role: "Sports Enthusiast",
-      avatar: "/placeholder.svg?height=40&width=40",
-      content:
-        "As a sports fan, having access to all major sporting events worldwide is crucial. This service delivers on that promise with dedicated sports channels and special event coverage. Customer support is also top-notch!",
-      rating: 5,
-    },
-    {
-      name: "Emma Rodriguez",
-      role: "Movie Buff",
-      avatar: "/placeholder.svg?height=40&width=40",
-      content:
-        "The VOD library is impressive with new releases added regularly. I particularly enjoy the international movie selection that I can't find on mainstream streaming platforms.",
-      rating: 4,
-    },
-    {
-      name: "David Wilson",
-      role: "Tech Enthusiast",
-      avatar: "/placeholder.svg?height=40&width=40",
-      content:
-        "Setup was straightforward on all my devices. The app interface is intuitive and user-friendly. I appreciate the regular updates and new features being added.",
-      rating: 5,
-    },
-    {
-      name: "Olivia Thompson",
-      role: "Family Subscription",
-      avatar: "/placeholder.svg?height=40&width=40",
-      content:
-        "Our family loves the variety of channels available for everyone's tastes. The parental controls are excellent for managing what our kids can access. Great value for money!",
-      rating: 5,
-    },
-  ]
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1))
+type TestimonialProps = {
+  quote: string
+  author: {
+    name: string
+    role: string
+    avatar?: string
   }
+  rating: number
+  className?: string
+}
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1))
+const testimonials: TestimonialProps[] = [
+  {
+    quote: "Bruh, this IPTV is LIT! 4K streams smoother than my barber's fade. Never buffering even when the whole squad is watching different channels!",
+    author: {
+      name: "DeShawn Taylor",
+      role: "Streaming Enthusiast",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "¡Hostia tío! Esto es mejor que la fibra de Movistar. Tengo todos los canales del mundo y ni un corte. Los partidos en 4K son para llorar de alegría!",
+    author: {
+      name: "Alejandro Morales",
+      role: "Football Fanatic",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "Mon reuf, cette IPTV c'est du lourd! J'ai tous les channels US, les bouquets BEIN en 4K, même les chaines adultes en full HD... bref, la totale!",
+    author: {
+      name: "Karim B.",
+      role: "Tech Influencer",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "Alter, das ist die geilste IPTV ever! Kein Buffern bei Bundesliga in 4K, alle PPV Events dabei. Selbst Oma streamt jetzt türkische Soaps ohne Lag!",
+    author: {
+      name: "Jan Fischer",
+      role: "IT Consultant",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "Mamma mia ragazzi! Finalmente un IPTV che non bufferizza! Ho tutti i canali Sky, DAZN e pure i regionali in Full HD. Che spettacolo dio boia!",
+    author: {
+      name: "Luca Romano",
+      role: "Sports Blogger",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "This shit hits different! Got every NBA game, UFC PPV, and 24/7 cartoon channels for the kids. Support team actually answers tickets within minutes!",
+    author: {
+      name: "Tyrone Johnson",
+      role: "Cord-Cutter",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "Wallah c'est ouf! J'ai testé 5 IPTV avant, aucun tient la route comme ça. Les mises à jour sont instant et y'a même les replays des émissions!",
+    author: {
+      name: "Mehdi T.",
+      role: "Gamer/Streamer",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "No mames wey! Por fin una IPTV que sí jala al 100. Tengo HBO Max, Netflix y Disney+ integrados en la app. Hasta mi jefa lo usa para sus telenovelas!",
+    author: {
+      name: "Carlos M.",
+      role: "Digital Nomad",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "Brudi, diese IPTV app ist krasser als Sky! Alle Bundesliga Spiele ohne VPN, 8000+ channels und EPG funktioniert perfekt. Was will man mehr?",
+    author: {
+      name: "Tim Wagner",
+      role: "Ex-Pirate Stream User",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
+  },
+  {
+    quote: "Raga ma che botta! Finalmente un IPTV con i canali italiani all'estero senza lag. Pure la Rai in HD dall'Australia, roba da matti!",
+    author: {
+      name: "Paolo Bianchi",
+      role: "Expat Chef",
+      avatar: "/sir.jpg"
+    },
+    rating: 5,
   }
+];
 
-  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + 3)
-
-  return (
-    <section id="testimonials" className="w-full py-20 px-10 md:px-20">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div ref={ref} className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gradient-primary"
-          >
-            What Our Customers Say
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isInView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="h-1 w-20 bg-primary mx-auto my-4"
+const TestimonialCard = ({ quote, author, rating, className }: TestimonialProps) => (
+  <Card className={cn("border-none shadow-none", className)}>
+    <CardContent className="p-6">
+      <div className="flex mb-4">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star
+            key={i}
+            className={cn("w-5 h-5", i < rating ? "fill-amber-400 text-amber-400" : "fill-muted text-muted")}
           />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed"
-          >
-            Don't just take our word for it. Here's what our satisfied customers have to say about our service.
-          </motion.p>
-        </div>
-
-        <div className="relative">
-          <div className="hidden md:flex justify-between absolute top-1/2 -translate-y-1/2 left-0 right-0 z-10">
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary/10 text-primary"
-              onClick={prevTestimonial}
-            >
-              <ChevronLeft className="h-6 w-6" />
-              <span className="sr-only">Previous</span>
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary/10 text-primary"
-              onClick={nextTestimonial}
-            >
-              <ChevronRight className="h-6 w-6" />
-              <span className="sr-only">Next</span>
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 relative">
-            {visibleTestimonials.map((testimonial, index) => (
-              <motion.div
-                key={`${testimonial.name}-${currentIndex + index}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              >
-                <Card className="h-full flex flex-col card-hover">
-                  <CardContent className="pt-6 flex-grow">
-                    <div className="flex mb-4">
-                      {Array(5)
-                        .fill(0)
-                        .map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-5 w-5 ${i < testimonial.rating ? "text-accent fill-accent" : "text-muted-foreground"}`}
-                          />
-                        ))}
-                    </div>
-                    <p className="text-muted-foreground">"{testimonial.content}"</p>
-                  </CardContent>
-                  <CardFooter className="border-t pt-4">
-                    <div className="flex items-center space-x-4">
-                      <Avatar>
-                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                        <AvatarFallback className="bg-primary/10 text-primary">
-                          {testimonial.name.charAt(0)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">{testimonial.name}</p>
-                        <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                    </div>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-8 md:hidden space-x-2">
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-8 w-8 border-primary/20 text-primary"
-              onClick={prevTestimonial}
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span className="sr-only">Previous</span>
-            </Button>
-            {testimonials.map((_, index) => (
-              <Button
-                key={index}
-                variant="outline"
-                size="icon"
-                className={`h-2 w-2 rounded-full p-0 ${
-                  index >= currentIndex && index < currentIndex + 3 ? "bg-primary" : "bg-muted"
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              >
-                <span className="sr-only">Go to slide {index + 1}</span>
-              </Button>
-            ))}
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-8 w-8 border-primary/20 text-primary"
-              onClick={nextTestimonial}
-            >
-              <ChevronRight className="h-4 w-4" />
-              <span className="sr-only">Next</span>
-            </Button>
-          </div>
+        ))}
+      </div>
+      <blockquote className="text-lg mb-6 italic text-muted-foreground">"{quote}"</blockquote>
+      <div className="flex items-center gap-3">
+        <Avatar>
+          <AvatarImage src={author.avatar} alt={author.name} />
+          <AvatarFallback>{author.name.charAt(0)}</AvatarFallback>
+        </Avatar>
+        <div>
+          <p className="font-medium">{author.name}</p>
+          <p className="text-sm text-muted-foreground">{author.role}</p>
         </div>
       </div>
-    </section>
+    </CardContent>
+  </Card>
+)
+
+export default function Testimonials() {
+  return (
+    <div className="py-12 px-4 md:px-6 lg:px-8">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl font-bold tracking-tight">What Our Clients Say</h2>
+        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          Don't just take our word for it — hear from some of our satisfied customers.
+        </p>
+      </div>
+
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full max-w-5xl mx-auto"
+      >
+        <CarouselContent>
+          {testimonials.map((testimonial, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
+              <div className="p-1">
+                <TestimonialCard {...testimonial} />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <div className="flex justify-center mt-8 gap-2">
+          <CarouselPrevious className="relative static" />
+          <CarouselNext className="relative static" />
+        </div>
+      </Carousel>
+    </div>
   )
 }
 

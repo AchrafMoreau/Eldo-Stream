@@ -18,7 +18,7 @@ export default function LoadingOverlay({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center"
+      className="fixed inset-0 bg-background/80 backdrop-blur-sm !z-100 w-[100vw] h-[100vh] flex flex-col items-center justify-center "
     >
       <div className="max-w-md w-full px-8">
         <motion.div
@@ -28,9 +28,9 @@ export default function LoadingOverlay({
           className="mb-8 text-center"
         >
             <div className="flex justify-center items-center">
-                <Image src="/logo_sm.png" alt="Manara Water Consulting" height={50} width={50} />
+                <Image src="/logo_sm.png" alt="Eldo Stream" height={50} width={50} />
                 <p className="font-medium text-primary">
-                Manara Water <span className="text-gray-700 dark:text-gray-300">Consulting</span>
+                  ELDO STREAM
                 </p>
             </div>
             <p className="text-muted-foreground">Please wait while we translate the content</p>

@@ -46,5 +46,93 @@
         "years": "10+",
         "label": "Anni di Esperienza"
         }
+    },
+    "PackagePlans": {
+        "title": "Scegli il Tuo Piano Perfetto",
+        "subtitle": "Sblocca l'intrattenimento premium con le nostre flessibili opzioni di abbonamento",
+        "features": [
+        "+25.000 canali TV",
+        "+66.000 film e serie TV",
+        "Qualità dell'immagine 4K/Ultra HD",
+        "AGGIORNAMENTI GRATUITI di canali e VOD",
+        "Tempo di attività del server 99,9%",
+        "Anti-congelamento",
+        "Tutti i dispositivi sono supportati",
+        "Contenuti per adulti",
+        "Assistenza tecnica 24/7"
+        ],
+        "plans": [
+        {
+            "name": "1 Mese",
+            "description": "Perfetto per provare il nostro servizio",
+            "savings": null
+        },
+        {
+            "name": "3 Mesi",
+            "description": "Il nostro piano a breve termine più popolare",
+            "savings": "Risparmia il 17%"
+        },
+        {
+            "name": "6 Mesi",
+            "description": "Ottimo rapporto qualità-prezzo per uso a medio termine",
+            "savings": "Risparmia il 25%"
+        },
+        {
+            "name": "12 Mesi",
+            "description": "Miglior rapporto qualità-prezzo per un impegno a lungo termine",
+            "savings": "Risparmia il 37%"
+        }
+        ],
+        "popularBadge": "POPOLARE",
+        "buyButton": "Acquista Ora",
+        "guaranteeText": "Tutti i piani includono una garanzia di rimborso di 7 giorni. Senza fare domande."
+    },
+    "HowToUse": {
+        "title": "Come Usare",
+        "subtitle": "Iniziare con il nostro servizio IPTV è veloce e semplice. Segui questi semplici passaggi per iniziare il tuo viaggio nello streaming.",
+        "steps": [
+        {
+            "title": "Abbonati & Scarica",
+            "description": "Scegli il tuo piano e scarica l'app IPTV sul tuo dispositivo preferito."
+        },
+        {
+            "title": "Configura il Tuo Account",
+            "description": "Inserisci le tue credenziali e configura le tue preferenze per la migliore esperienza."
+        },
+        {
+            "title": "Sfoglia i Canali",
+            "description": "Esplora la nostra vasta libreria di canali, film e serie TV."
+        }
+        ]
+    },
+    "WhyUs": {
+        "title": "Perché Sceglierci",
+        "subtitle": "Ci distinguiamo dalla concorrenza grazie alle nostre funzionalità premium e all'impegno per un servizio di qualità.",
+        "features": [
+        {
+            "title": "Streaming Ad Alta Velocità",
+            "description": "Vivi un'esperienza senza buffer con i nostri server ad alte prestazioni distribuiti in tutto il mondo."
+        },
+        {
+            "title": "Connessione Sicura",
+            "description": "I tuoi dati e le tue abitudini di visualizzazione sono protetti con le nostre connessioni crittografate."
+        },
+        {
+            "title": "Disponibilità 99,9%",
+            "description": "Goditi intrattenimento senza interruzioni grazie al nostro servizio affidabile e infrastruttura ridondante."
+        },
+        {
+            "title": "Contenuti Globali",
+            "description": "Accedi a canali e contenuti da tutto il mondo, superando le restrizioni geografiche."
+        },
+        {
+            "title": "Supporto 24/7",
+            "description": "Il nostro team di supporto dedicato è disponibile 24 ore su 24 per assisterti con qualsiasi problema."
+        },
+        {
+            "title": "Supporto Multi-Dispositivo",
+            "description": "Guarda su TV, computer, tablet, smartphone o qualsiasi altro dispositivo compatibile."
+        }
+        ]
     }
 }

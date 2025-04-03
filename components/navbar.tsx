@@ -220,14 +220,24 @@ function LanguageSelector() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const pathname = usePathname();
+  const [loadingProgress, setLoadingProgress] = useState(0)
   const localeActive = useLocale();
   const t = useTranslations();
 
+  // const onSelectChange = (nextLocale: string) => {
+  //   startTransition(() => {
+  //     const newPathname = pathname.replace(/^\/(en|fr|es|de|it)/, '');
+  //     router.replace(`/${nextLocale}${newPathname}`);
+  //   });
+  // };
   const onSelectChange = (nextLocale: string) => {
+    setLoadingProgress(0)
     startTransition(() => {
-      const newPathname = pathname.replace(/^\/(en|fr|es|de|it)/, '');
-      router.replace(`/${nextLocale}${newPathname}`);
+      router.replace(`/${nextLocale}${pathname}`);
+      setLoadingProgress(50)
     });
+    setLoadingProgress(100)
+
   };
 
   const getFlag = () => {
@@ -240,7 +250,7 @@ function LanguageSelector() {
     }
   };
 
-  return (
+  return isPending ? <LoadingOverlay progress={loadingProgress} language={localeActive} /> : (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="bg-background border-transparent" size="icon">

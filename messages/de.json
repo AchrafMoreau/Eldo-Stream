@@ -46,5 +46,93 @@
         "years": "10+",
         "label": "Jahre Erfahrung"
         }
+    },
+    "PackagePlans": {
+    "title": "Wählen Sie Ihren perfekten Plan",
+    "subtitle": "Entdecken Sie Premium-Unterhaltung mit unseren flexiblen Abonnementoptionen",
+    "features": [
+      "+25.000 TV-Sender",
+      "+66.000 Filme & Serien",
+      "4K/Ultra HD Bildqualität",
+      "KOSTENLOSE Sender- & VOD-Updates",
+      "99,9% Server-Verfügbarkeit",
+      "Anti-Freeze",
+      "Alle Geräte werden unterstützt",
+      "Erwachseneninhalte",
+      "24/7 technischer Support"
+    ],
+    "plans": [
+      {
+        "name": "1 Monat",
+        "description": "Perfekt um unseren Service auszuprobieren",
+        "savings": null
+      },
+      {
+        "name": "3 Monate",
+        "description": "Unser beliebtester Kurzzeitplan",
+        "savings": "17% sparen"
+      },
+      {
+        "name": "6 Monate",
+        "description": "Großartiges Preis-Leistungs-Verhältnis für mittelfristige Nutzung",
+        "savings": "25% sparen"
+      },
+      {
+        "name": "12 Monate",
+        "description": "Beste Preis-Leistung für langfristige Nutzung",
+        "savings": "37% sparen"
+      }
+    ],
+    "popularBadge": "BELIEBT",
+    "buyButton": "Jetzt kaufen",
+    "guaranteeText": "Alle Pläne beinhalten eine 7-tägige Geld-zurück-Garantie. Keine Fragen gestellt."
+    },
+    "HowToUse": {
+        "title": "Anleitung",
+        "subtitle": "Der Einstieg in unseren IPTV-Service ist schnell und einfach. Folgen Sie diesen einfachen Schritten, um Ihre Streaming-Reise zu beginnen.",
+        "steps": [
+        {
+            "title": "Abonnieren & Herunterladen",
+            "description": "Wählen Sie Ihren Plan und laden Sie die IPTV-Player-App auf Ihr bevorzugtes Gerät herunter."
+        },
+        {
+            "title": "Konto Einrichten",
+            "description": "Geben Sie Ihre Anmeldedaten ein und konfigurieren Sie Ihre Einstellungen für das beste Erlebnis."
+        },
+        {
+            "title": "Kanäle Durchsuchen",
+            "description": "Entdecken Sie unsere umfangreiche Bibliothek mit Kanälen, Filmen und Serien."
+        }
+        ]
+    },
+    "WhyUs": {
+        "title": "Warum Uns Wählen",
+        "subtitle": "Wir heben uns von der Konkurrenz durch unsere Premium-Funktionen und unser Engagement für qualitativ hochwertigen Service ab.",
+        "features": [
+        {
+            "title": "Hochgeschwindigkeits-Streaming",
+            "description": "Erleben Sie pufferfreies Streaming mit unseren Hochleistungsservern weltweit."
+        },
+        {
+            "title": "Sichere Verbindung",
+            "description": "Ihre Daten und Sehgewohnheiten sind durch unsere sicheren, verschlüsselten Verbindungen geschützt."
+        },
+        {
+            "title": "99,9% Betriebszeit",
+            "description": "Genießen Sie unterbrechungsfreie Unterhaltung mit unserem zuverlässigen Service und redundanter Infrastruktur."
+        },
+        {
+            "title": "Globale Inhalte",
+            "description": "Greifen Sie auf Kanäle und Inhalte aus der ganzen Welt zu, ohne geografische Einschränkungen."
+        },
+        {
+            "title": "24/7 Support",
+            "description": "Unser engagiertes Support-Team ist rund um die Uhr verfügbar, um bei Problemen zu helfen."
+        },
+        {
+            "title": "Multi-Geräte-Unterstützung",
+            "description": "Schauen Sie auf Ihrem Fernseher, Computer, Tablet, Smartphone oder jedem anderen kompatiblen Gerät."
+        }
+        ]
     }
 }

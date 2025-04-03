@@ -4,41 +4,44 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Zap, Shield, Clock, Globe, Headphones, Tv } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export default function WhyUs() {
+  const t = useTranslations("WhyUs")
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const featureTrans = t.raw('features')
 
   const features = [
     {
       icon: <Zap className="h-10 w-10" />,
-      title: "High-Speed Streaming",
-      description: "Experience buffer-free streaming with our high-performance servers located worldwide.",
+      title: featureTrans[0].title,
+      description: featureTrans[0].description,
     },
     {
       icon: <Shield className="h-10 w-10" />,
-      title: "Secure Connection",
-      description: "Your data and viewing habits are protected with our secure encrypted connections.",
+      title: featureTrans[1].title,
+      description: featureTrans[1].description,
     },
     {
       icon: <Clock className="h-10 w-10" />,
-      title: "99.9% Uptime",
-      description: "Enjoy uninterrupted entertainment with our reliable service and redundant infrastructure.",
+      title: featureTrans[2].title,
+      description: featureTrans[2].description,
     },
     {
       icon: <Globe className="h-10 w-10" />,
-      title: "Global Content",
-      description: "Access channels and content from around the world, breaking geographical restrictions.",
+      title: featureTrans[3].title,
+      description: featureTrans[3].description,
     },
     {
       icon: <Headphones className="h-10 w-10" />,
-      title: "24/7 Support",
-      description: "Our dedicated support team is available around the clock to assist with any issues.",
+      title: featureTrans[4].title,
+      description: featureTrans[4].description,
     },
     {
       icon: <Tv className="h-10 w-10" />,
-      title: "Multi-Device Support",
-      description: "Watch on your TV, computer, tablet, smartphone, or any other compatible device.",
+      title: featureTrans[5].title,
+      description: featureTrans[5].description,
     },
   ]
 
@@ -71,7 +74,7 @@ export default function WhyUs() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gradient-primary"
           >
-            Why Choose Us
+            {t('title')}
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
@@ -85,7 +88,7 @@ export default function WhyUs() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed"
           >
-            We stand out from the competition with our premium features and commitment to quality service.
+            {t('subtitle')}
           </motion.p>
         </div>
 
