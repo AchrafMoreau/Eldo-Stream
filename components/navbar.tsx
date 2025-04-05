@@ -125,16 +125,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
-            <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-              IP
-            </div>
-            <span
-              className={cn(
-                "text-xl font-bold transition-colors duration-300",
-                isScrolled ? "text-foreground" : "text-white",
-              )}
-            >
-            </span>
+            <Image src="/logo.png" alt="Logo" width={60} height={60} className="rounded-full" />
           </Link>
 
           {/* Desktop Navigation */}

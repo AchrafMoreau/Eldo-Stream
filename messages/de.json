@@ -85,7 +85,8 @@
     ],
     "popularBadge": "BELIEBT",
     "buyButton": "Jetzt kaufen",
-    "guaranteeText": "Alle Pläne beinhalten eine 7-tägige Geld-zurück-Garantie. Keine Fragen gestellt."
+    "guaranteeText": "Alle Pläne beinhalten eine 7-tägige Geld-zurück-Garantie. Keine Fragen gestellt.",
+    "ctaMessage":"Hallo! Ich interessiere mich für den Kauf des ${packageName}-Pakets für $${price}. Könnten Sie mir weitere Informationen geben?"
     },
     "HowToUse": {
         "title": "Anleitung",
@@ -134,5 +135,9 @@
             "description": "Schauen Sie auf Ihrem Fernseher, Computer, Tablet, Smartphone oder jedem anderen kompatiblen Gerät."
         }
         ]
+    },
+    "testimonials": {
+        "title": "Was Unsere Kunden Sagen",
+        "description": "Glauben Sie nicht nur unserem Wort — hören Sie von einigen unserer zufriedenen Kunden."
     }
 }

@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import { Download, Tv, Settings, Play } from "lucide-react"
 import { useTranslations } from "next-intl"
+import Title from "./ui/title"
 
 export default function HowToUse() {
   const t = useTranslations("HowToUse")
@@ -37,30 +38,9 @@ export default function HowToUse() {
     <section id="how-to-use" className="w-full py-20 px-10 md:px-20 bg-gradient-to-t from-background to-slate-100 dark:from-background dark:to-slate-900">
       <div className="container px-4 md:px-6 mx-auto">
         <div ref={ref} className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gradient-primary"
-          >
-            {t('title')}
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isInView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="h-1 w-20 bg-primary mx-auto my-4"
-          />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed"
-          >
-            {t('subtitle')}
-          </motion.p>
+          <Title title={t("title")} description={t("subtitle")} />
         </div>
-
+        
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-primary/20 hidden md:block" />
 

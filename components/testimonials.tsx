@@ -4,6 +4,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Star } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
+import Title from "./ui/title"
 
 type TestimonialProps = {
   quote: string
@@ -136,13 +138,11 @@ const TestimonialCard = ({ quote, author, rating, className }: TestimonialProps)
 )
 
 export default function Testimonials() {
+  const t = useTranslations("testimonials")
   return (
-    <div className="py-12 px-4 md:px-6 lg:px-8">
+    <section id="testimonials" className="py-12 px-4 md:px-6 lg:px-8">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold tracking-tight">What Our Clients Say</h2>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Don't just take our word for it — hear from some of our satisfied customers.
-        </p>
+        <Title title={t("title")} description={t("description")} />
       </div>
 
       <Carousel
@@ -166,7 +166,7 @@ export default function Testimonials() {
           <CarouselNext className="relative static" />
         </div>
       </Carousel>
-    </div>
+    </section>
   )
 }
 

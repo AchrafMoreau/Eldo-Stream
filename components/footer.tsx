@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -12,10 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-                IP
-              </div>
-              <span className="text-xl font-bold">IPTV Premium</span>
+              <Image src="/logo.png" alt="Logo" width={100} height={100} className="rounded-full" />
             </Link>
             <p className="text-muted-foreground mb-4">
               Your gateway to unlimited entertainment with thousands of channels and on-demand content.

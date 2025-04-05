@@ -20,10 +20,10 @@ function HeroSection() {
         ]);
         
         setImages([
-          ...moviesData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
-          ...tvData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
-          ...moviesData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
-          ...tvData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`)
+          ...moviesData.results.map((item) => item.poster_path && `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...tvData.results.map((item) => item.poster_path && `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...moviesData.results.map((item) =>  item.poster_path && `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...tvData.results.map((item) => item.poster_path && `https://image.tmdb.org/t/p/w500${item.poster_path}`)
         ])
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -34,7 +34,6 @@ function HeroSection() {
 
     fetchData();
   }, []);
-
 
 
   const handelFreeTrail = () => {
@@ -48,7 +47,7 @@ function HeroSection() {
 
   return  (
     <section id="home">
-      <div className="relative mx-auto flex h-[90vh] w-full flex-col items-center justify-center overflow-hidden hero ">
+      <div className="relative mx-auto flex h-[90vh] w-full flex-col items-center justify-center overflow-hidden hero drop-shadow-xl">
         <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl !leading-[50px] md:!leading-[70px]">
           {t('title')} {" "}
           <span className="relative z-20 inline-block rounded-xl bg-primary/40 px-4 py-1 text-white underline decoration-primary decoration-[6px] underline-offset-[16px] backdrop-blur-sm">

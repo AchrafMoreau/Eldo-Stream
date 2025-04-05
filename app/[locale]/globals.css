@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -132,7 +133,7 @@ body {
   }
 }
 
-.hero{
+/* .hero{
   position: relative;
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -150,4 +151,21 @@ body {
   bottom: -40px;
   background: hsl(var(--background));
   box-shadow: inset 0px 0px 25px 5px rgba(0, 0, 0, 0.527), inset 0px 0px 10px 5px rgba(0, 0, 0, 0.04);
+} */
+.hero {
+  --r: 20px;  /* control the rounded part */
+  --s: 370rem;
+  --a: 84deg;
+  --p: 50%;   /* control the position */
+
+  border-bottom-right-radius: var(--r);
+  border-bottom-left-radius: var(--r);
+  --_m:calc(100% - var(--r)),#000 calc(100% - 1px),#0000;
+  --_d:(var(--s) + var(--r))*cos(var(--a));
+  mask:
+    radial-gradient(var(--r) at calc(var(--p) + var(--_d)) var(--_m)),
+    radial-gradient(var(--r) at calc(var(--p) - var(--_d)) var(--_m)),
+    radial-gradient(var(--s) at var(--p) calc(100% + sin(var(--a))*var(--s)),
+      #0000 100%,#000 calc(100% + 1px)) 0 calc(var(--r)*(sin(var(--a)) - 1)) no-repeat,
+    linear-gradient(90deg,#000 calc(var(--p) - var(--_d)),#0000 0 calc(var(--p) + var(--_d)),#000 0);
 }

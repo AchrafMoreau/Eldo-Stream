@@ -1,21 +1,28 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
-import './globals.css'
+import { getMessages, setRequestLocale } from "next-intl/server";
+import "./globals.css";
 import { notFound } from "next/navigation";
 
-export default async function RootLayout({
-  children,
-  params: { locale }
-}: {
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }));
+}
+
+export default async function RootLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: "en" | "fr" | "de" | "it" | "es" }>;
 }) {
+  const { locale } = await props.params;
+
   if (!routing.locales.includes(locale)) {
     notFound();
   }
-  const messages = await getMessages({locale});
+
+  setRequestLocale(locale);
+
+  // Using internationalization in Client Components
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
@@ -32,7 +39,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            {props.children}
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

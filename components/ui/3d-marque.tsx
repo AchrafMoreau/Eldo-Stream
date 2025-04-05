@@ -42,7 +42,7 @@ const ThreeDMarqueeComponent = ({
                 className="flex flex-col items-start gap-4"
               >
                 <GridLineVertical className="-left-2" offset="40px" />
-                {subarray.map((image, imageIndex) => (
+                {subarray.map((image, imageIndex) => image && (
                   <div className="relative" key={imageIndex + image}>
                     <GridLineHorizontal className="-top-2" offset="10px" />
                     <OptimizedImage

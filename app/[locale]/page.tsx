@@ -57,6 +57,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons:[
+    {
+      rel: 'icon',
+      url: '/favicon.ico',
+    },
+  ]
 }
 
 // This enables Static Site Generation (SSG)

@@ -23,10 +23,10 @@ export default function MoviesSlide() {
         ]);
         
         setTv([
-          ...tvData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...tvData.results.map((item) => item.poster_path && `https://image.tmdb.org/t/p/w500${item.poster_path}`),
         ])
         setMovie([
-          ...moviesData.results.map((item) => `https://image.tmdb.org/t/p/w500${item.poster_path}`),
+          ...moviesData.results.map((item) => item.poster_path && `https://image.tmdb.org/t/p/w500${item.poster_path}`),
         ])
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -41,7 +41,7 @@ export default function MoviesSlide() {
     <section>
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee pauseOnHover className="[--duration:60s]">
-            {movie.map((item, i) => (
+            {movie.map((item, i) => item && (
                 <Image 
                     key={i}
                     src={item}
@@ -53,7 +53,7 @@ export default function MoviesSlide() {
             ))}
         </Marquee>
         <Marquee reverse pauseOnHover className="[--duration:60s]">
-            {tv.map((item, i) => (
+            {tv.map((item, i) => item && (
                 <Image 
                     key={i}
                     src={item}

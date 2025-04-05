@@ -85,7 +85,8 @@
         ],
         "popularBadge": "POPULAIRE",
         "buyButton": "Acheter Maintenant",
-        "guaranteeText": "Tous les plans incluent une garantie de remboursement de 7 jours. Sans poser de questions."
+        "guaranteeText": "Tous les plans incluent une garantie de remboursement de 7 jours. Sans poser de questions.",
+        "ctaMessage": "Bonjour ! Je suis intéressé par l'achat du forfait ${packageName} pour $${price}. Pourriez-vous me donner plus d'informations ?"
     },
     "HowToUse": {
         "title": "Comment Utiliser",
@@ -134,5 +135,9 @@
             "description": "Regardez sur votre TV, ordinateur, tablette, smartphone ou tout autre appareil compatible."
         }
         ]
+    },
+    "testimonials": {
+        "title": "Ce Que Disent Nos Clients",
+        "description": "Ne vous fiez pas seulement à nos dires — écoutez certains de nos clients satisfaits."
     }
 }

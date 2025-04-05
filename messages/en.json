@@ -85,7 +85,8 @@
         ],
         "popularBadge": "POPULAR",
         "buyButton": "Buy Now",
-        "guaranteeText": "All plans include a 7-day money-back guarantee. No questions asked."
+        "guaranteeText": "All plans include a 7-day money-back guarantee. No questions asked.",
+        "ctaMessage":"Hello! I'm interested in purchasing the ${packageName} package for $${price}. Can you provide more information?"
     },
     "HowToUse": {
         "title": "How To Use",
@@ -134,5 +135,9 @@
             "description": "Watch on your TV, computer, tablet, smartphone, or any other compatible device."
         }
         ]
+    },
+    "testimonials": {
+        "title": "What Our Clients Say",
+        "description": "Don't just take our word for it — hear from some of our satisfied customers."
     }
 }

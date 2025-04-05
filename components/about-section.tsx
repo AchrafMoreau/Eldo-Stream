@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import { Tv, Film, Globe, Shield } from "lucide-react"
 import Image from "next/image"
 import { useTranslations } from "next-intl"
+import Title from "./ui/title"
 
 export default function AboutSection() {
   const ref = useRef(null)
@@ -34,28 +35,7 @@ export default function AboutSection() {
     <section id="about" className="w-full py-20 px-10 md:px-20 bg-gradient-to-b from-background to-slate-50 dark:from-background dark:to-slate-950">
       <div className="container px-4 md:px-6 mx-auto">
         <div ref={ref} className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gradient-primary"
-          >
-            {t('title')}
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isInView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="h-1 w-20 bg-primary mx-auto my-4"
-          />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed"
-          >
-            {t('description')}
-          </motion.p>
+          <Title title={t("title")} description={t("description")} />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">

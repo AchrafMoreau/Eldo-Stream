@@ -29,7 +29,7 @@ export default function ChannelsSlide(){
 
 
     return(
-        <section>
+        <section >
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee pauseOnHover className="[--duration:60s]">
             {channels.map((item, i) => (
