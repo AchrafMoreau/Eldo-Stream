@@ -16,26 +16,26 @@ import LoadingScreen from "@/components/ui/laoding"
 
 // Enhanced metadata for better SEO
 export const metadata: Metadata = {
-  title: "Premium IPTV Service | 10,000+ Live Channels & HD Streaming",
+  title: "ELDO IPTV Service | 10,000+ Live Channels & HD Streaming",
   description:
     "Access 10,000+ live TV channels, movies, and shows with our premium IPTV service. HD & 4K quality, reliable streams, sports coverage, and 24/7 support. Try risk-free today!",
   keywords:
     "IPTV service, streaming service, live TV, HD channels, 4K streaming, sports channels, movies, TV shows, on-demand content, premium IPTV",
   alternates: {
-    canonical: "https://yourdomainname.com",
+    canonical: "https://www.eldoiptv.com",
   },
   openGraph: {
-    title: "Premium IPTV Service | 10,000+ Live Channels & HD Streaming",
+    title: "ELDO IPTV Service | 10,000+ Live Channels & HD Streaming",
     description:
       "Access 10,000+ live TV channels, movies, and shows with our premium IPTV service. HD & 4K quality, reliable streams, and 24/7 support.",
-    url: "https://yourdomainname.com",
-    siteName: "Premium IPTV Service",
+    url: "https://www.eldoiptv.com",
+    siteName: "ELDO IPTV Service",
     images: [
       {
-        url: "https://yourdomainname.com/og-image.jpg",
+        url: "https://www.eldoiptv.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Premium IPTV Service",
+        alt: "ELDO IPTV Service",
       },
     ],
     locale: "en_US",
@@ -43,10 +43,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium IPTV Service | 10,000+ Live Channels & HD Streaming",
+    title: "ELDO IPTV Service | 10,000+ Live Channels & HD Streaming",
     description:
       "Access 10,000+ live TV channels, movies, and shows with our premium IPTV service. HD & 4K quality, reliable streams, and 24/7 support.",
-    images: ["https://yourdomainname.com/twitter-image.jpg"],
+    images: ["https://www.eldoiptv.com/twitter-image.jpg"],
   },
   robots: {
     index: true,

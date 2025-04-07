@@ -159,7 +159,7 @@ function InstallationSteps({ steps }) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: index * 0.1 }}
-          className="flex items-start gap-3 p-3 rounded-md hover:bg-accent transition-colors"
+          className="flex items-start gap-3 p-3 rounded-md hover:bg-primary/30 transition-colors"
         >
           <div className="bg-primary/10 rounded-full p-1 mt-0.5">
             <Check className="h-4 w-4 text-primary" />

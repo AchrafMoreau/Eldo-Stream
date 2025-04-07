@@ -1,16 +1,16 @@
 export default function SchemaMarkup() {
   // JSON-LD structured data for better search engine understanding
+  const DomainName = "https://www.eldoiptv.com"
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Premium IPTV Service",
-    url: "https://yourdomainname.com",
-    logo: "https://yourdomainname.com/logo.png",
+    name: "ELDO IPTV Service",
+    url: DomainName,
+    logo: `${DomainName}/logo.png`,
     description:
       "Access 10,000+ live TV channels, movies, and shows with our premium IPTV service. HD & 4K quality, reliable streams, and 24/7 support.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Streaming Avenue",
       addressLocality: "Entertainment District",
       postalCode: "10001",
       addressCountry: "US",
@@ -25,18 +25,17 @@ export default function SchemaMarkup() {
       "https://facebook.com/premiumiptv",
       "https://twitter.com/premiumiptv",
       "https://instagram.com/premiumiptv",
-      "https://youtube.com/premiumiptv",
     ],
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: "9.99",
-      highPrice: "29.99",
-      offerCount: "3",
+      lowPrice: "14.99",
+      highPrice: "115.00",
+      offerCount: "4",
     },
     potentialAction: {
       "@type": "ViewAction",
-      target: "https://yourdomainname.com/plans",
+      target: `${DomainName}#plans`,
     },
   }
 
@@ -44,17 +43,17 @@ export default function SchemaMarkup() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Premium IPTV Streaming",
+    name: "ELDO IPTV Streaming",
     serviceType: "Streaming Service",
     provider: {
       "@type": "Organization",
-      name: "Premium IPTV Service",
+      name: "ELDO IPTV Service",
     },
     description:
       "Access 10,000+ live TV channels, movies, and shows with our premium IPTV service. HD & 4K quality, reliable streams, and 24/7 support.",
     offers: {
       "@type": "Offer",
-      price: "19.99",
+      price: "14.99",
       priceCurrency: "USD",
       priceValidUntil: "2024-12-31",
       availability: "https://schema.org/InStock",
@@ -75,7 +74,7 @@ export default function SchemaMarkup() {
       },
       author: {
         "@type": "Person",
-        name: "Sarah Johnson",
+        name: "Achraf Zepam",
       },
       reviewBody:
         "I've tried several IPTV services, but this one stands out for its reliability and channel selection. The HD quality is consistently excellent, and I rarely experience any buffering issues.",

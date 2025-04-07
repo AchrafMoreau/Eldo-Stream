@@ -4,7 +4,6 @@ import type React from "react"
 
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
 interface SupportLayoutProps {
@@ -14,7 +13,6 @@ interface SupportLayoutProps {
 }
 
 export function SupportLayout({ children, title, description }: SupportLayoutProps) {
-  const pathname = usePathname()
 
   return (
     <div className="container py-12 px-10 md-px-20">
