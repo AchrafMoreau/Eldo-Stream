@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Globe, Check } from "lucide-react"
@@ -18,7 +17,7 @@ export default function LoadingOverlay({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-background/80 backdrop-blur-sm !z-100 w-[100vw] h-[100vh] flex flex-col items-center justify-center "
+      className="fixed inset-0 bg-background backdrop-blur-sm !z-100 w-[100vw] h-[100vh] flex flex-col items-center justify-center "
     >
       <div className="max-w-md w-full px-8">
         <motion.div
@@ -30,7 +29,6 @@ export default function LoadingOverlay({
             <div className="flex justify-center items-center">
               <Image src="/logo.png" alt="Eldo Stream" height={150} width={150} />
             </div>
-            <p className="text-muted-foreground">Please wait while we translate the content</p>
         </motion.div>
 
         {/* Progress bar container */}

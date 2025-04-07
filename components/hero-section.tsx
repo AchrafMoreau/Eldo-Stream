@@ -62,7 +62,7 @@ function HeroSection() {
         <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4">
           <Button
             size="lg"
-            className="group bg-primary text-primary-foreground hover:bg-primary/90 btn-primary-glow"
+            className="group bg-primary text-white dark:text-primary-foreground hover:bg-primary/90 btn-primary-glow"
             onClick={() => {
               const plansSection = document.getElementById("plans");
               if (plansSection) {

@@ -1,11 +1,38 @@
+'use client'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
 import Image from "next/image"
+import { useCallback } from "react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const navitems = [
+    { id: "home", name: "Home" },
+    { id: "about", name: "About Us" },
+    { id: "plans", name: "Pricing Plans" },
+    { id: "how-to-use", name: "How It Works" },
+    { id: "testimonials", name: "Testimonials" },
+    { label: "Why Us", id: "why-us" },
+  ]
+  const supportItems = [
+    { id: "device-compatibility", name: "Device Compatibility" },
+    { id: "installation-guide", name: "Installation Guide" },
+    { id: "faq", name: "FAQ" },
+    { id: "terms-of-service", name: "Terms of Service" },
+    { id: "privacy-policy", name: "Privacy Policy" },
+  ]
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset
+      window.scrollTo({
+        top: offsetTop - 80, // Account for navbar height
+        behavior: "smooth",
+      })
+    }
+  }, [])
 
   return (
     <footer className="w-full bg-secondary/5 border-t border-primary/10 px-10 md:px-20">
@@ -28,45 +55,21 @@ export default function Footer() {
               <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" aria-label="YouTube" className="text-muted-foreground hover:text-primary">
-                <Youtube className="h-5 w-5" />
-              </Link>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="text-muted-foreground hover:text-primary">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#plans" className="text-muted-foreground hover:text-primary">
-                  Pricing Plans
-                </Link>
-              </li>
-              <li>
-                <Link href="#how-to-use" className="text-muted-foreground hover:text-primary">
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link href="#testimonials" className="text-muted-foreground hover:text-primary">
-                  Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Contact Us
-                </Link>
-              </li>
+              {navitems.map((item) => (
+                <li key={item.id}>
+                  <button  
+                    className="text-muted-foreground hover:text-primary"
+                    onClick={() => scrollToSection(item.id)}>
+                    {item.name}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -74,45 +77,23 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Help Center
+                <Link href="/support" className="text-muted-foreground hover:text-primary">
+                  Support
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Installation Guide
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Device Compatibility
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Privacy Policy
-                </Link>
-              </li>
+              {supportItems.map((item) => (
+                <li key={item.id}>
+                  <Link href={`/support/${item.id}`} className="text-muted-foreground hover:text-primary">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">123 Streaming Avenue, Entertainment District, 10001</span>
-              </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground">+1 (555) 123-4567</span>
@@ -141,7 +122,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-primary/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">© {currentYear} IPTV Premium. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {currentYear} ELDO IPTV. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <Link href="#" className="text-xs text-muted-foreground hover:text-primary">
               Terms of Service

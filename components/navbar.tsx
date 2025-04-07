@@ -157,7 +157,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Button
               size="sm"
-              className="md:block bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-md hover:scale-105"
+              className="md:block bg-gradient-to-r from-primary to-primary/30 text-white dark:text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-md hover:scale-105"
             >
               Get Started
             </Button>
@@ -244,7 +244,7 @@ function LanguageSelector() {
   return isPending ? <LoadingOverlay progress={loadingProgress} language={localeActive} /> : (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="bg-background border-transparent" size="icon">
+        <Button variant="outline" className="bg-background border-transparent hover:bg-primary" size="icon">
           <Image
             src={getFlag()}
             alt="Language"
@@ -253,8 +253,8 @@ function LanguageSelector() {
           />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => onSelectChange("en")}>
+      <DropdownMenuContent align="end" >
+        <DropdownMenuItem onClick={() => onSelectChange("en")} className="hover:bg-primary">
           <Image src="/gb.svg" width={20} height={20} alt="English" className="mr-2" />
           {t("english")}
         </DropdownMenuItem>

@@ -11,6 +11,8 @@ import Navbar from "@/components/navbar"
 import LenisProvider from "@/components/lein-provider"
 import MoviesSlide from "@/components/movies-slide"
 import ChannelsSlide from "@/components/channels-slide"
+import { Suspense, useEffect, useState } from "react"
+import LoadingScreen from "@/components/ui/laoding"
 
 // Enhanced metadata for better SEO
 export const metadata: Metadata = {
@@ -71,20 +73,22 @@ export const revalidate = 86400 // Revalidate once per day (ISR)
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen" >
+      <Suspense fallback={null}>
       {/* Schema.org structured data for rich results */}
-      <SchemaMarkup />
-      <Navbar />
-      <LenisProvider />
-      <HeroSection />
-      <ChannelsSlide />
-      <AboutSection />
-      <MoviesSlide />
-      <PackagePlans />
-      <HowToUse />
-      <WhyUs />
-      <Testimonials />
-      <Footer />
+        <SchemaMarkup />
+        <Navbar />
+        <LenisProvider />
+        <HeroSection />
+        <ChannelsSlide />
+        <AboutSection />
+        <MoviesSlide />
+        <PackagePlans />
+        <HowToUse />
+        <WhyUs />
+        <Testimonials />
+        <Footer />
+      </Suspense>
     </main>
   )
 }

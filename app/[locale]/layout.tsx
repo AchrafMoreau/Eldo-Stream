@@ -24,6 +24,7 @@ export default async function RootLayout(props: {
   // Using internationalization in Client Components
   const messages = await getMessages();
 
+
   return (
     <html lang={locale}>
       <body>

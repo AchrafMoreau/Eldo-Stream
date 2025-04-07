@@ -14,7 +14,7 @@ export function ModeToggle() {
   return (
     <Button
       variant="outline"
-      className="bg-background border-transparent"
+      className="bg-background border-transparent hover:bg-primary"
       size="icon"
       onClick={toggleTheme}
       aria-label="Toggle theme"
