@@ -1,13 +1,15 @@
 'use client'
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
 import Image from "next/image"
 import { useCallback } from "react"
+import { useTranslations } from "next-intl"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const t = useTranslations()
   const navitems = [
     { id: "home", name: "Home" },
     { id: "about", name: "About Us" },
@@ -17,9 +19,10 @@ export default function Footer() {
     { label: "Why Us", id: "why-us" },
   ]
   const supportItems = [
+    { id: "support", name: "Support" },
     { id: "device-compatibility", name: "Device Compatibility" },
     { id: "installation-guide", name: "Installation Guide" },
-    { id: "faq", name: "FAQ" },
+    { id: "faqs", name: "FAQ" },
     { id: "terms-of-service", name: "Terms of Service" },
     { id: "privacy-policy", name: "Privacy Policy" },
   ]
@@ -36,7 +39,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-secondary/5 border-t border-primary/10 px-10 md:px-20">
-      <div className="container px-4 md:px-6 py-12 md:py-16">
+      <div className="container px-4 md:px-6 pt-12 pb-5 md:pt-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
@@ -66,7 +69,7 @@ export default function Footer() {
                   <button  
                     className="text-muted-foreground hover:text-primary"
                     onClick={() => scrollToSection(item.id)}>
-                    {item.name}
+                      {t(`${item.id}`)}
                   </button>
                 </li>
               ))}
@@ -76,15 +79,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/support" className="text-muted-foreground hover:text-primary">
-                  Support
-                </Link>
-              </li>
               {supportItems.map((item) => (
                 <li key={item.id}>
-                  <Link href={`/support/${item.id}`} className="text-muted-foreground hover:text-primary">
-                    {item.name}
+                  <Link href={item.id == 'support' ? `/${item.id}` : `/support/${item.id}`} className="text-muted-foreground hover:text-primary">
+                    {t(`${item.id}`)}
                   </Link>
                 </li>
               ))}
@@ -121,22 +119,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-primary/10 mt-12 pt-6 flex flex-col md:flex-row justify-center items-center">
           <p className="text-sm text-muted-foreground">© {currentYear} ELDO IPTV. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-primary">
-              Terms of Service
-            </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-primary">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-primary">
-              Cookie Policy
-            </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-primary">
-              Sitemap
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -1,4 +1,17 @@
 {
+    "home": "Home",
+    "about": "Chi siamo",
+    "plans": "Piani",
+    "how-to-use": "Come funziona",
+    "why-us": "Perché noi",
+    "testimonials": "Testimonianze",
+    "support": "Supporto",
+    "device-compatibility": "Compatibilità del dispositivo",
+    "installation-guide": "Guida all'installazione",
+    "faqs": "FAQ",
+    "terms-of-service": "Termini di servizio",
+    "privacy-policy": "Politica sulla privacy",
+    "getStarted": "Inizia ora",
     "english": "Inglese",
     "french": "Francese",
     "spanish": "Spagnolo",
@@ -136,8 +149,508 @@
         }
         ]
     },
-    "testimonials": {
+    "testimonial": {
         "title": "Cosa Dicono I Nostri Clienti",
         "description": "Non credere solo alla nostra parola — ascolta alcuni dei nostri clienti soddisfatti."
+    },
+    "deviceCompatibility": {
+        "title": "Compatibilità dei dispositivi",
+        "description": "Verifica se il tuo dispositivo è compatibile con il nostro servizio IPTV",
+        "supportedDevices": {
+            "title": "Dispositivi supportati",
+            "description": "Il nostro servizio IPTV è compatibile con una vasta gamma di dispositivi. Controlla l'elenco qui sotto per vedere se il tuo dispositivo è supportato.",
+            "deviceCards": {
+                "smartTvs": {
+                    "title": "Smart TV",
+                    "description": "Samsung, LG, Sony, ecc."
+                },
+                "streamingDevices": {
+                    "title": "Dispositivi di streaming",
+                    "description": "Fire TV, Android TV, Apple TV"
+                },
+                "mobileDevices": {
+                    "title": "Dispositivi mobili",
+                    "description": "Telefoni iOS e Android"
+                },
+                "tablets": {
+                    "title": "Tablet",
+                    "description": "iPad, tablet Android"
+                },
+                "computers": {
+                    "title": "Computer",
+                    "description": "Windows, Mac, Linux"
+                },
+                "iptvBoxes": {
+                    "title": "Box IPTV",
+                    "description": "MAG, Formuler, Dreamlink"
+                }
+            }
+        },
+        "compatibilityList": {
+            "title": "Elenco compatibilità",
+            "searchPlaceholder": "Cerca dispositivi...",
+            "tableHeaders": {
+                "device": "Dispositivo",
+                "type": "Tipo",
+                "compatibility": "Compatibilità",
+                "recommendedApp": "App consigliata",
+                "notes": "Note"
+            },
+            "noResults": "Nessun dispositivo trovato corrispondente alla tua ricerca",
+            "compatibilityStatuses": {
+                "full": "Completa",
+                "partial": "Parziale",
+                "notCompatible": "Non compatibile"
+            }
+        },
+        "missingDevice": {
+            "title": "Non vedi il tuo dispositivo?",
+            "description": "Se il tuo dispositivo specifico non è elencato, potrebbe comunque essere compatibile. Contatta il nostro team di supporto per assistenza.",
+            "contactButton": "Contatta il supporto"
+        },
+        "devices": [
+            {
+                "name": "Samsung Smart TV (2016+)",
+                "type": "Smart TV",
+                "compatibility": "Completa",
+                "recommendedApp": "Smart IPTV, SS IPTV",
+                "notes": "Funziona meglio con Tizen OS 2.4 o superiore"
+            },
+            {
+                "name": "LG Smart TV (WebOS 3.0+)",
+                "type": "Smart TV",
+                "compatibility": "Completa",
+                "recommendedApp": "Smart IPTV, SS IPTV",
+                "notes": "Richiede WebOS 3.0 o superiore"
+            },
+            {
+                "name": "Sony Android TV",
+                "type": "Smart TV",
+                "compatibility": "Completa",
+                "recommendedApp": "TiviMate, IPTV Smarters",
+                "notes": "Si consiglia Android TV 7.0 o superiore"
+            },
+            {
+                "name": "Hisense Smart TV",
+                "type": "Smart TV",
+                "compatibility": "Parziale",
+                "recommendedApp": "Smart IPTV",
+                "notes": "Alcuni modelli potrebbero avere problemi di prestazioni"
+            },
+            {
+                "name": "Amazon Fire TV Stick",
+                "type": "Dispositivo di streaming",
+                "compatibility": "Completa",
+                "recommendedApp": "TiviMate, IPTV Smarters",
+                "notes": "Tutte le generazioni supportate"
+            },
+            {
+                "name": "Amazon Fire TV Cube",
+                "type": "Dispositivo di streaming",
+                "compatibility": "Completa",
+                "recommendedApp": "TiviMate, IPTV Smarters",
+                "notes": "Prestazioni eccellenti"
+            },
+            {
+                "name": "Nvidia Shield TV",
+                "type": "Dispositivo di streaming",
+                "compatibility": "Completa",
+                "recommendedApp": "TiviMate, Kodi",
+                "notes": "Migliori prestazioni tra tutti i dispositivi Android"
+            },
+            {
+                "name": "Apple TV 4K",
+                "type": "Dispositivo di streaming",
+                "compatibility": "Completa",
+                "recommendedApp": "iPlayTV, GSE Smart IPTV",
+                "notes": "Si consiglia tvOS 14.0 o superiore"
+            },
+            {
+                "name": "Roku",
+                "type": "Dispositivo di streaming",
+                "compatibility": "Parziale",
+                "recommendedApp": "Canale browser web",
+                "notes": "Funzionalità limitata, non consigliato"
+            },
+            {
+                "name": "Chromecast con Google TV",
+                "type": "Dispositivo di streaming",
+                "compatibility": "Completa",
+                "recommendedApp": "TiviMate, IPTV Smarters",
+                "notes": "I modelli Chromecast più vecchi richiedono il casting da un altro dispositivo"
+            },
+            {
+                "name": "iPhone/iPad",
+                "type": "Dispositivo mobile",
+                "compatibility": "Completa",
+                "recommendedApp": "GSE Smart IPTV, IPTV Smarters",
+                "notes": "Si consiglia iOS 12.0 o superiore"
+            },
+            {
+                "name": "Telefono/Tablet Android",
+                "type": "Dispositivo mobile",
+                "compatibility": "Completa",
+                "recommendedApp": "TiviMate, IPTV Smarters",
+                "notes": "Si consiglia Android 7.0 o superiore"
+            },
+            {
+                "name": "PC Windows",
+                "type": "Computer",
+                "compatibility": "Completa",
+                "recommendedApp": "VLC, MyIPTV Player",
+                "notes": "Si consiglia Windows 10 o superiore"
+            },
+            {
+                "name": "Mac",
+                "type": "Computer",
+                "compatibility": "Completa",
+                "recommendedApp": "VLC, IPTV",
+                "notes": "Si consiglia macOS 10.14 o superiore"
+            },
+            {
+                "name": "Linux",
+                "type": "Computer",
+                "compatibility": "Completa",
+                "recommendedApp": "VLC, Kodi",
+                "notes": "La maggior parte delle distribuzioni è supportata"
+            },
+            {
+                "name": "MAG 322/324",
+                "type": "Box IPTV",
+                "compatibility": "Completa",
+                "recommendedApp": "Integrato",
+                "notes": "Ottimizzato per servizi IPTV"
+            },
+            {
+                "name": "Formuler Z8/Z10",
+                "type": "Box IPTV",
+                "compatibility": "Completa",
+                "recommendedApp": "MyTVOnline",
+                "notes": "Una delle migliori box IPTV dedicate"
+            },
+            {
+                "name": "Dreamlink T3",
+                "type": "Box IPTV",
+                "compatibility": "Completa",
+                "recommendedApp": "DOL3",
+                "notes": "Eccellente per servizi IPTV"
+            },
+            {
+                "name": "BuzzTV XRS 4500",
+                "type": "Box IPTV",
+                "compatibility": "Completa",
+                "recommendedApp": "Integrato",
+                "notes": "Buone prestazioni per IPTV"
+            },
+            {
+                "name": "Xiaomi Mi Box S",
+                "type": "Dispositivo di streaming",
+                "compatibility": "Completa",
+                "recommendedApp": "TiviMate, IPTV Smarters",
+                "notes": "Buona box Android TV economica"
+            },
+            {
+                "name": "PlayStation 4/5",
+                "type": "Console di gioco",
+                "compatibility": "Parziale",
+                "recommendedApp": "Plex, Browser web",
+                "notes": "Funzionalità limitata tramite browser"
+            },
+            {
+                "name": "Xbox Series X/S",
+                "type": "Gaming Console",
+                "compatibility": "Partial",
+                "recommendedApp": "Web Browser",
+                "notes": "Limited functionality through browser"
+            },
+            {
+                "name": "Samsung Galaxy Watch",
+                "type": "Smartwatch",
+                "compatibility": "Not Compatible",
+                "recommendedApp": "N/A",
+                "notes": "Screen too small for practical use"
+            },
+            {
+                "name": "Amazon Echo Show",
+                "type": "Smart Display",
+                "compatibility": "Partial",
+                "recommendedApp": "Web Browser",
+                "notes": "Limited functionality through browser"
+            }
+        ]
+    },
+    "faq": {
+        "title": "Domande Frequenti",
+        "description": "Trova le risposte alle domande più comuni sul nostro servizio IPTV",
+        "items": [
+        {
+            "question": "Cos'è l'IPTV?",
+            "answer": "L'IPTV (Internet Protocol Television) è un servizio che trasmette contenuti televisivi tramite reti IP. A differenza della televisione tradizionale terrestre, satellitare o via cavo."
+        },
+        {
+            "question": "Su quanti dispositivi posso usare un abbonamento?",
+            "answer": "Il nostro abbonamento standard permette di usare il servizio su massimo 2 dispositivi contemporaneamente. Gli abbonamenti premium consentono fino a 4 dispositivi."
+        },
+        {
+            "question": "Ho bisogno di un dispositivo speciale?",
+            "answer": "Il nostro servizio funziona su molti dispositivi come smart TV, smartphone, tablet, computer e dispositivi di streaming come Amazon Fire Stick, Android TV Box e Apple TV. Consulta la pagina Compatibilità Dispositivi per maggiori dettagli."
+        },
+        {
+            "question": "Di quale velocità internet ho bisogno?",
+            "answer": "Raccomandiamo una velocità minima di 10 Mbps per contenuti SD, 25 Mbps per HD e 50 Mbps per 4K. Una connessione stabile è più importante della velocità massima."
+        },
+        {
+            "question": "Posso vedere contenuti on-demand?",
+            "answer": "Sì, il nostro servizio include una vasta libreria di contenuti on-demand come film e serie TV, oltre ai canali televisivi in diretta."
+        },
+        {
+            "question": "Come posso cancellare l'abbonamento?",
+            "answer": "Puoi cancellare l'abbonamento in qualsiasi momento dalla tua dashboard. Vai su 'Abbonamento' e clicca su 'Cancella Abbonamento'. Il servizio rimarrà attivo fino alla fine del periodo di fatturazione corrente."
+        },
+        {
+            "question": "C'è una prova gratuita?",
+            "answer": "Sì, offriamo una prova gratuita di 24 ore per testare il servizio prima di abbonarti. Contatta il nostro supporto per richiederla."
+        }
+        ],
+        "ui": {
+        "open": "Apri",
+        "close": "Chiudi",
+        "expand": "Espandi domanda",
+        "collapse": "Comprimi domanda"
+        }
+    },
+    "installation": {
+        "title": "Guida all'Installazione",
+        "description": "Istruzioni passo-passo per configurare il nostro servizio IPTV sui tuoi dispositivi",
+        "tabs": {
+        "android": "Android",
+        "ios": "iOS",
+        "smart-tv": "Smart TV",
+        "pc": "PC/Mac"
+        },
+        "steps": {
+        "key": "Passo",
+        "android": [
+            "Scarica e installa l'app IPTV Player dal Google Play Store",
+            "Apri l'app e seleziona 'Aggiungi Playlist'",
+            "Inserisci l'URL M3U fornito nella tua email di benvenuto",
+            "Assegna un nome alla playlist (es. 'Il mio IPTV')",
+            "Clicca 'Salva' per aggiungere la playlist",
+            "I tuoi canali dovrebbero ora caricarsi e essere pronti per la visione"
+        ],
+        "ios": [
+            "Scarica e installa l'app IPTV Player dall'App Store",
+            "Apri l'app e tocca l'icona '+' per aggiungere una nuova playlist",
+            "Seleziona l'opzione 'Playlist M3U'",
+            "Inserisci l'URL M3U fornito nella tua email di benvenuto",
+            "Assegna un nome alla playlist (es. 'Il mio IPTV')",
+            "Tocca 'Salva' per aggiungere la playlist",
+            "I tuoi canali dovrebbero ora caricarsi e essere pronti per la visione"
+        ],
+        "smart-tv": [
+            "Sulla tua Smart TV, vai all'app store (Samsung Store, LG Content Store, ecc.)",
+            "Cerca e scarica un'app IPTV player",
+            "Apri l'app e vai a 'Impostazioni' o 'Aggiungi Playlist'",
+            "Seleziona l'opzione per aggiungere una playlist via URL",
+            "Inserisci l'URL M3U fornito nella tua email di benvenuto",
+            "Assegna un nome alla playlist (es. 'Il mio IPTV')",
+            "Salva le impostazioni e torna alla schermata principale",
+            "I tuoi canali dovrebbero ora caricarsi e essere pronti per la visione"
+        ],
+        "pc": [
+            "Scarica e installa VLC Media Player o un altro lettore compatibile con IPTV",
+            "Apri il lettore e vai su 'Media' > 'Apri Flusso di Rete'",
+            "Incolla l'URL M3U fornito nella tua email di benvenuto",
+            "Clicca 'Riproduci' per iniziare lo streaming",
+            "Per una migliore esperienza, considera l'uso di applicazioni dedicate come MyIPTV Player o Kodi con l'add-on PVR IPTV Simple Client"
+        ]
+        },
+        "recommended_apps": "App Consigliate:",
+        "android_apps": [
+        "• TiviMate",
+        "• IPTV Smarters Pro",
+        "• GSE Smart IPTV"
+        ],
+        "ios_apps": [
+        "• IPTV Smarters Player",
+        "• GSE Smart IPTV",
+        "• IPTV Player"
+        ],
+        "smart_tv_apps": [
+        "• SS IPTV",
+        "• Smart IPTV",
+        "• NET IPTV"
+        ],
+        "pc_apps": [
+        "• VLC Media Player",
+        "• Kodi (con PVR IPTV Simple Client)",
+        "• MyIPTV Player",
+        "• Perfect Player (Windows)"
+        ],
+        "help_section": {
+        "title": "Hai Bisogno di Aiuto?",
+        "description": "Se hai problemi con l'installazione o la configurazione, il nostro team di supporto è disponibile 24/7 per assisterti.",
+        "contact": "Contatta il Supporto",
+        "faq": "Vedi le FAQ"
+        }
+    },
+    "privacy_policy": {
+        "title": "Informativa sulla Privacy",
+        "description": "Scopri come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali",
+        "last_updated": "Ultimo aggiornamento: 6 aprile 2022",
+        "sections": {
+        "introduction": {
+            "title": "1. Introduzione",
+            "content": "Questa Informativa sulla Privacy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando usi il nostro servizio IPTV. Ti invitiamo a leggere attentamente questa Informativa. Utilizzando il nostro servizio, accetti le pratiche relative ai dati descritte in questa politica."
+        },
+        "information_we_collect": {
+            "title": "2. Informazioni che Raccogliamo",
+            "content": "Potremmo raccogliere diversi tipi di informazioni dagli utenti del nostro servizio, tra cui:",
+            "items": [
+            "Informazioni personali come nome, indirizzo email e dati di pagamento",
+            "Dati di utilizzo come abitudini di visualizzazione, orari di accesso e informazioni sul dispositivo",
+            "Dati tecnici come indirizzo IP, tipo di browser e sistema operativo"
+            ]
+        },
+        "how_we_collect": {
+            "title": "3. Come Raccogliamo le Informazioni",
+            "content": "Raccogliamo informazioni:",
+            "items": [
+            "Direttamente da te quando ti registri al servizio, effettui un acquisto o contatti l'assistenza clienti",
+            "Automaticamente mentre navighi nel nostro servizio tramite cookie e tecnologie simili",
+            "Da fornitori di servizi terzi, come gestori di pagamenti"
+            ]
+        },
+        "how_we_use": {
+            "title": "4. Come Utilizziamo le Tue Informazioni",
+            "content": "Utilizziamo le informazioni raccolte per vari scopi, tra cui:",
+            "items": [
+            "Fornire e mantenere il nostro servizio",
+            "Elaborare pagamenti e abbonamenti",
+            "Personalizzare la tua esperienza",
+            "Migliorare il nostro servizio",
+            "Comunicare aggiornamenti, offerte e promozioni",
+            "Monitorare e analizzare modelli e tendenze d'uso",
+            "Rilevare, prevenire e risolvere problemi tecnici"
+            ]
+        },
+        "disclosure": {
+            "title": "5. Divulgazione delle Tue Informazioni",
+            "content": "Potremmo divulgare le tue informazioni personali:",
+            "items": [
+            "Per adempiere a obblighi legali",
+            "Per proteggere e difendere i nostri diritti e proprietà",
+            "Per prevenire o indagare su illeciti legati al servizio",
+            "A fornitori terzi che operano per nostro conto",
+            "Con il tuo consenso"
+            ]
+        },
+        "security": {
+            "title": "6. Sicurezza dei Dati",
+            "content": "Adottiamo misure tecniche e organizzative adeguate per proteggere le tue informazioni personali. Tuttavia, nessun metodo di trasmissione su Internet o archiviazione elettronica è sicuro al 100%, e non possiamo garantire una sicurezza assoluta."
+        },
+        "your_rights": {
+            "title": "7. I Tuoi Diritti sulla Privacy",
+            "content": "A seconda della tua ubicazione, potresti avere determinati diritti sulle tue informazioni personali, tra cui:",
+            "items": [
+            "Diritto di accesso alle tue informazioni",
+            "Diritto di rettificare informazioni inesatte",
+            "Diritto di richiedere la cancellazione dei tuoi dati",
+            "Diritto di limitare il trattamento dei dati",
+            "Diritto alla portabilità dei dati",
+            "Diritto di opposizione al trattamento"
+            ]
+        },
+        "children": {
+            "title": "8. Privacy dei Minori",
+            "content": "Il nostro servizio non è destinato a minori di 18 anni. Non raccogliamo consapevolmente informazioni personali da minori di 18 anni. Se sei un genitore o tutore e credi che tuo figlio ci abbia fornito dati personali, contattaci."
+        },
+        "changes": {
+            "title": "9. Modifiche a questa Informativa",
+            "content": "Potremmo aggiornare periodicamente la nostra Informativa sulla Privacy. Ti informeremo di eventuali cambiamenti pubblicando la nuova versione su questa pagina e aggiornando la data dell'\"Ultimo aggiornamento\"."
+        },
+        "contact": {
+            "title": "10. Contattaci",
+            "content": "Per domande su questa Informativa, scrivici a privacy@example.com."
+        }
+        }
+    },
+    "terms": {
+        "title": "Termini di Servizio",
+        "description": "Si prega di leggere attentamente questi termini prima di utilizzare il nostro servizio.",
+        "sections": {
+            "acceptance": {
+            "title": "1. Accettazione dei Termini",
+            "content": "Accedendo o utilizzando il nostro servizio IPTV, accetti di essere vincolato da questi Termini di Servizio e da tutte le leggi e normative applicabili. Se non sei d'accordo con uno qualsiasi di questi termini, ti è vietato utilizzare o accedere al servizio."
+            },
+            "description": {
+            "title": "2. Descrizione del Servizio",
+            "content": "Il nostro servizio IPTV fornisce agli utenti l'accesso a contenuti televisivi tramite reti di protocollo Internet. I contenuti disponibili possono variare nel tempo senza preavviso."
+            },
+            "subscription": {
+            "title": "3. Abbonamento e Fatturazione",
+            "points": {
+                "p1": "Per accedere al nostro servizio IPTV, è necessario acquistare un abbonamento.",
+                "p2": "Tutti i costi di abbonamento non sono rimborsabili, salvo quanto espressamente previsto nella nostra politica di rimborso.",
+                "p3": "Ci riserviamo il diritto di modificare le tariffe in qualsiasi momento. Eventuali modifiche avranno effetto al rinnovo dell'abbonamento.",
+                "p4": "Sei responsabile di tutti i costi sostenuti con il tuo account, comprese le tasse applicabili."
+            }
+            },
+            "responsibilities": {
+            "title": "4. Responsabilità dell'Utente",
+            "points": {
+                "p1": "Accetti di non condividere le credenziali del tuo account con terzi.",
+                "p2": "Accetti di non utilizzare il nostro servizio per scopi illegali o in violazione delle leggi locali, statali, nazionali o internazionali.",
+                "p3": "Accetti di non ridistribuire, ritrasmettere o ritrasmettere alcun contenuto ottenuto tramite il nostro servizio.",
+                "p4": "Sei responsabile della riservatezza delle tue informazioni di accesso e di tutte le attività svolte con il tuo account."
+            }
+            },
+            "disclaimer": {
+            "title": "5. Esclusione di Responsabilità sui Contenuti",
+            "points": {
+                "p1": "Non garantiamo la disponibilità di contenuti specifici.",
+                "p2": "Non siamo responsabili dei contenuti forniti tramite il nostro servizio e non garantiamo l'accuratezza, l'affidabilità o la qualità di tali contenuti."
+            }
+            },
+            "availability": {
+            "title": "6. Disponibilità del Servizio",
+            "points": {
+                "p1": "Ci impegniamo a fornire un servizio ininterrotto, ma non garantiamo la disponibilità continua del servizio.",
+                "p2": "Ci riserviamo il diritto di sospendere o interrompere il servizio per manutenzione o altri motivi senza preavviso."
+            }
+            },
+            "intellectual": {
+            "title": "7. Proprietà Intellettuale",
+            "content": "Tutti i contenuti forniti tramite il nostro servizio sono protetti da diritti d'autore, marchi e altre leggi sulla proprietà intellettuale. Accetti di non riprodurre, distribuire, modificare o creare opere derivate da tali contenuti."
+            },
+            "termination": {
+            "title": "8. Cessazione",
+            "points": {
+                "p1": "Ci riserviamo il diritto di sospendere o chiudere il tuo account e l'accesso al nostro servizio immediatamente, senza preavviso o responsabilità, per qualsiasi motivo.",
+                "p2": "Alla cessazione, il tuo diritto di utilizzare il servizio cesserà immediatamente."
+            }
+            },
+            "liability": {
+            "title": "9. Limitazione di Responsabilità",
+            "content": "In nessun caso saremo responsabili per danni indiretti, accidentali, speciali, consequenziali o punitivi, inclusa la perdita di profitti, dati, uso, reputazione o altre perdite immateriali derivanti dall'uso o impossibilità di utilizzo del servizio."
+            },
+            "changes": {
+            "title": "10. Modifiche ai Termini",
+            "content": "Ci riserviamo il diritto di modificare o sostituire i presenti Termini di Servizio in qualsiasi momento. È tua responsabilità controllare periodicamente i termini per eventuali modifiche."
+            },
+            "contact": {
+            "title": "11. Informazioni di Contatto",
+            "content": "Per domande riguardanti questi Termini di Servizio, contattaci all'indirizzo support@example.com."
+            },
+            "lastUpdated": "Ultimo aggiornamento: 6 aprile 2022"
+        }
+    },
+    "not_found": {
+        "error": "Errore 404",
+        "title": "Pagina non trovata",
+        "description": "Spiacenti, la pagina che stai cercando non esiste o è stata spostata.",
+        "back_home": "Torna alla home"
     }
+
+
 }

@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect, useCallback, useTransition } from "react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
@@ -19,12 +19,45 @@ import { useTranslations } from "use-intl"
 
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const pathname = usePathname()
+  const t = useTranslations()
+  const supportItems = [
+    {
+      id: "home",
+      title: "Home",
+      href: "/",
+    },
+    {
+      id:"faqs",
+      title: "FAQ",
+      href: "/support/faq",
+    },
+    {
+      id:"installation-guide",
+      title: "Installation Guide",
+      href: "/support/installation-guide",
+    },
+    {
+      id:"device-compatibility",
+      title: "Device Compatibility",
+      href: "/support/device-compatibility",
+    },
+    {
+      id:"terms-of-service",
+      title: "Terms of Service",
+      href: "/support/terms-of-service",
+    },
+    {
+      id:"privacy-policy",
+      title: "Privacy Policy",
+      href: "/support/privacy-policy",
+    },
+  ]
 
-
-
+  useEffect(() => {
+    setActiveSection(pathname || "home")
+  },[pathname])
 
   return (
     <header
@@ -41,6 +74,21 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
+            {supportItems.map((item) => (
+                <Link
+                    key={item.title}
+                    href={item.href}
+                    className={cn(
+                        "px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative text-white/90 hover:text-white hover:bg-white/10",
+                        activeSection == item.href ? "text-primary" : "text-white/90 hover:text-white hover:bg-white/10"
+                    )}
+                >
+                  {t(`${item.id}`)}
+                    {activeSection === item.href && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary rounded-full" />
+                    )}
+                </Link>
+            ))}
 
             {/* <Link
                 href="/"
@@ -60,7 +108,7 @@ export default function Navbar() {
               size="sm"
               className="md:block bg-gradient-to-r from-primary to-primary/30 text-white dark:text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-md hover:scale-105"
             >
-              Get Started
+              {t("getStarted")}
             </Button>
             <LanguageSelector />
             <ModeToggle />
@@ -82,6 +130,20 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[80%] sm:w-[350px] pt-12">
                 <div className="flex flex-col space-y-4">
+                    {supportItems.map((item) => (
+                        <Link
+                            key={item.title}
+                            href={item.href}
+                            className={cn(
+                                "px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative text-white/90 hover:text-white hover:bg-white/10",
+                                activeSection == item.href ? "bg-primary/10 text-primary" : "hover:bg-muted",
+                            )}
+                        >
+                          {t(`${item.id}`)}
+                            {activeSection == item.href && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />}
+                        </Link>
+                    ))}
+
                     {/* <Link
                         href="/"
                         className={cn(

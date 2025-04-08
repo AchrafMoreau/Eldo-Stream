@@ -4,6 +4,12 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { FileText, HelpCircle, Laptop, Shield, FileTerminal, ArrowLeft } from "lucide-react"
 
+type SupportItem = {
+  title: string
+  description: string
+  icon: React.ComponentType<{ className?: string }>
+  href: string
+}
 export default function SupportPage() {
   const supportItems = [
     {
@@ -91,7 +97,7 @@ export default function SupportPage() {
   )
 }
 
-function SupportCard({ item, variants }) {
+function SupportCard({ item, variants }: { item: SupportItem, variants: any }) {
   const Icon = item.icon
 
   return (

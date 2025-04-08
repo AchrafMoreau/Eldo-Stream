@@ -29,7 +29,7 @@ export default function SchemaMarkup() {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: "14.99",
+      lowPrice: "15.00",
       highPrice: "115.00",
       offerCount: "4",
     },
@@ -53,7 +53,7 @@ export default function SchemaMarkup() {
       "Access 10,000+ live TV channels, movies, and shows with our premium IPTV service. HD & 4K quality, reliable streams, and 24/7 support.",
     offers: {
       "@type": "Offer",
-      price: "14.99",
+      price: "15.00",
       priceCurrency: "USD",
       priceValidUntil: "2024-12-31",
       availability: "https://schema.org/InStock",

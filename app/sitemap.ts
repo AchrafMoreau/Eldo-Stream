@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 
 // Generate a sitemap for better SEO
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://yourdomainname.com"
+  const baseUrl = "https://eldoiptv.com"
 
   return [
     {

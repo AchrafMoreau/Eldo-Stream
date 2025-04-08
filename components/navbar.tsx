@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useTransition } from "react"
-import Link from "next/link"
+import { Link } from "@1i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
@@ -43,7 +43,12 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const [scrollProgress, setScrollProgress] = useState(0)
+  const t = useTranslations()
 
+  const handelGetStarted = () => {
+    const phoneNumber = "+212713720920" // Replace with your actual WhatsApp number
+    window.open(`https://wa.me/${phoneNumber}?`, "_blank")
+  }
   // Smooth scroll to section with improved behavior
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -143,7 +148,7 @@ export default function Navbar() {
                       : "text-white/90 hover:text-white hover:bg-white/10",
                 )}
               >
-                {item.label}
+                {t(`${item.id}`)}
                 {activeSection === item.id && (
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary rounded-full" />
                 )}
@@ -156,10 +161,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2">
             <Button
+              onClick={handelGetStarted}
               size="sm"
               className="md:block bg-gradient-to-r from-primary to-primary/30 text-white dark:text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-md hover:scale-105"
             >
-              Get Started
+              {t('getStarted')}
             </Button>
             <LanguageSelector />
             <ModeToggle />
@@ -191,7 +197,7 @@ export default function Navbar() {
                         activeSection === item.id ? "bg-primary/10 text-primary" : "hover:bg-muted",
                       )}
                     >
-                      {item.label}
+                      {t(`${item.id}`)}
                       {activeSection === item.id && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />}
                     </button>
                   ))}

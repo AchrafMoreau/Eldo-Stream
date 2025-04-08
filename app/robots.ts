@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin/", "/private/"],
     },
-    sitemap: "https://yourdomainname.com/sitemap.xml",
+    sitemap: "https://eldoiptv.com/sitemap.xml",
   }
 }
 

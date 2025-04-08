@@ -30,7 +30,7 @@ export default function PackagePlans() {
   const plans = [
     {
       name: plansTrans[0].name,
-      price: 14.99,
+      price: 15.00,
       regularPrice: 19.99,
       description: plansTrans[0].description,
       popular: false,
@@ -147,7 +147,7 @@ export default function PackagePlans() {
                 </CardHeader>
                 <CardContent className="pb-4 flex-1">
                   <div className="mb-6">
-                    <span className="text-4xl font-bold">${plan.price}</span>
+                    <span className="text-4xl font-bold">${plan.price.toFixed(2)}</span>
                     <div className="text-muted-foreground text-sm mt-1">
                       {plan.savings && <span className="line-through">${plan.regularPrice.toFixed(2)}</span>}
                     </div>

@@ -138,7 +138,7 @@ const TestimonialCard = ({ quote, author, rating, className }: TestimonialProps)
 )
 
 export default function Testimonials() {
-  const t = useTranslations("testimonials")
+  const t = useTranslations("testimonial")
   return (
     <section id="testimonials" className="py-12 px-4 md:px-6 lg:px-8">
       <div className="text-center mb-10">

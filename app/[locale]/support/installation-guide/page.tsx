@@ -5,126 +5,115 @@ import { SupportLayout } from "@/components/support/page-layout"
 import { PageTransition } from "@/components/support/page-translation"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Check, Smartphone, Tv, Laptop } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export default function InstallationGuidePage() {
+  const t = useTranslations("installation")
   return (
     <PageTransition>
       <SupportLayout
-        title="Installation Guide"
-        description="Step-by-step instructions to set up our IPTV service on your devices"
+        title={t('title')}
+        description={t("description")}
       >
         <Tabs defaultValue="android" className="w-full">
           <TabsList className="grid grid-cols-4 mb-8">
             <TabsTrigger value="android" className="flex items-center gap-2">
               <Smartphone className="h-4 w-4" />
-              <span className="hidden sm:inline">Android</span>
+              <span className="hidden sm:inline">
+                {t('tabs.android')}
+              </span>
             </TabsTrigger>
             <TabsTrigger value="ios" className="flex items-center gap-2">
               <Smartphone className="h-4 w-4" />
-              <span className="hidden sm:inline">iOS</span>
+              <span className="hidden sm:inline">
+                {t('tabs.ios')}
+              </span>
             </TabsTrigger>
             <TabsTrigger value="smart-tv" className="flex items-center gap-2">
               <Tv className="h-4 w-4" />
-              <span className="hidden sm:inline">Smart TV</span>
+              <span className="hidden sm:inline">
+                {t("tabs.smart-tv")}
+              </span>
             </TabsTrigger>
             <TabsTrigger value="pc" className="flex items-center gap-2">
               <Laptop className="h-4 w-4" />
-              <span className="hidden sm:inline">PC/Mac</span>
+              <span className="hidden sm:inline">
+                {t('tabs.pc')}
+              </span>
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="android" className="space-y-6">
             <InstallationSteps
-              steps={[
-                "Download and install the IPTV Player app from the Google Play Store",
-                "Open the app and select 'Add Playlist'",
-                "Enter the M3U URL provided in your welcome email",
-                "Name your playlist (e.g., 'My IPTV')",
-                "Click 'Save' to add the playlist",
-                "Your channels should now load and be ready to watch",
-              ]}
+              steps={t.raw('steps.android')}
             />
             <div className="mt-6 p-4 bg-muted rounded-lg">
-              <h4 className="font-medium mb-2">Recommended Apps:</h4>
+              <h4 className="font-medium mb-2">
+                {t('recommended_apps')}
+              </h4>
               <ul className="space-y-2">
-                <li>• TiviMate</li>
-                <li>• IPTV Smarters Pro</li>
-                <li>• GSE Smart IPTV</li>
+                {t.raw('android_apps').map((app: string, index: number) => (
+                  <li key={index}>{app}</li>
+                ))}
               </ul>
             </div>
           </TabsContent>
 
           <TabsContent value="ios" className="space-y-6">
             <InstallationSteps
-              steps={[
-                "Download and install the IPTV Player app from the App Store",
-                "Open the app and tap on the '+' icon to add a new playlist",
-                "Select 'M3U Playlist' option",
-                "Enter the M3U URL provided in your welcome email",
-                "Name your playlist (e.g., 'My IPTV')",
-                "Tap 'Save' to add the playlist",
-                "Your channels should now load and be ready to watch",
-              ]}
+              steps={t.raw('steps.ios')}
             />
             <div className="mt-6 p-4 bg-muted rounded-lg">
-              <h4 className="font-medium mb-2">Recommended Apps:</h4>
+              <h4 className="font-medium mb-2">
+                {t('recommended_apps')}
+              </h4>
               <ul className="space-y-2">
-                <li>• IPTV Smarters Player</li>
-                <li>• GSE Smart IPTV</li>
-                <li>• IPTV Player</li>
+                {t.raw('ios_apps').map((app: string, index: number) => (
+                  <li key={index}>{app}</li>
+                ))}
               </ul>
             </div>
           </TabsContent>
 
           <TabsContent value="smart-tv" className="space-y-6">
             <InstallationSteps
-              steps={[
-                "On your Smart TV, go to the app store (Samsung Store, LG Content Store, etc.)",
-                "Search for and download an IPTV player app",
-                "Open the app and navigate to 'Settings' or 'Add Playlist'",
-                "Select the option to add a playlist via URL",
-                "Enter the M3U URL provided in your welcome email",
-                "Name your playlist (e.g., 'My IPTV')",
-                "Save the settings and return to the main screen",
-                "Your channels should now load and be ready to watch",
-              ]}
+              steps={t.raw('steps.smart-tv')}
             />
             <div className="mt-6 p-4 bg-muted rounded-lg">
-              <h4 className="font-medium mb-2">Recommended Apps:</h4>
+              <h4 className="font-medium mb-2">
+                {t("recommended_apps")}
+              </h4>
               <ul className="space-y-2">
-                <li>• SS IPTV</li>
-                <li>• Smart IPTV</li>
-                <li>• NET IPTV</li>
+                {t.raw('smart_tv_apps').map((app: string, index: number) => (
+                  <li key={index}>{app}</li>
+                ))}
               </ul>
             </div>
           </TabsContent>
 
           <TabsContent value="pc" className="space-y-6">
             <InstallationSteps
-              steps={[
-                "Download and install VLC Media Player or another IPTV-compatible player",
-                "Open the player and go to 'Media' > 'Open Network Stream'",
-                "Paste the M3U URL provided in your welcome email",
-                "Click 'Play' to start streaming",
-                "For a better experience, consider using dedicated IPTV applications like MyIPTV Player or Kodi with the PVR IPTV Simple Client add-on",
-              ]}
+              steps={t.raw("steps.pc")}
             />
             <div className="mt-6 p-4 bg-muted rounded-lg">
-              <h4 className="font-medium mb-2">Recommended Apps:</h4>
+              <h4 className="font-medium mb-2">
+                {t('recommended_apps')}
+              </h4>
               <ul className="space-y-2">
-                <li>• VLC Media Player</li>
-                <li>• Kodi (with PVR IPTV Simple Client)</li>
-                <li>• MyIPTV Player</li>
-                <li>• Perfect Player (Windows)</li>
+                {t.raw('pc_apps').map((app: string, index: number) => (
+                  <li key={index}>{app}</li>
+                ))}
               </ul>
             </div>
           </TabsContent>
         </Tabs>
 
         <div className="mt-10 p-5 bg-primary/5 rounded-lg border border-primary/10">
-          <h3 className="text-lg font-medium mb-3">Need Additional Help?</h3>
+          <h3 className="text-lg font-medium mb-3">
+            {t('help_section.title')}
+          </h3>
           <p className="text-muted-foreground mb-4">
-            If you're experiencing issues with installation or setup, our support team is available 24/7 to assist you.
+            {t('help_section.description')}
           </p>
           <div className="flex flex-wrap gap-3">
             <motion.a
@@ -133,7 +122,7 @@ export default function InstallationGuidePage() {
               whileTap={{ scale: 0.98 }}
               className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium"
             >
-              Contact Support
+              {t('help_section.contact')}
             </motion.a>
             <motion.a
               href="/support/faq"
@@ -141,7 +130,7 @@ export default function InstallationGuidePage() {
               whileTap={{ scale: 0.98 }}
               className="bg-secondary text-secondary-foreground px-4 py-2 rounded-md text-sm font-medium"
             >
-              View FAQ
+              {t('help_section.faq')}
             </motion.a>
           </div>
         </div>
@@ -150,7 +139,8 @@ export default function InstallationGuidePage() {
   )
 }
 
-function InstallationSteps({ steps }) {
+function InstallationSteps({ steps }: { steps: string[] }) {
+  const t = useTranslations("installation")
   return (
     <div className="space-y-4">
       {steps.map((step, index) => (
@@ -165,7 +155,9 @@ function InstallationSteps({ steps }) {
             <Check className="h-4 w-4 text-primary" />
           </div>
           <div>
-            <span className="font-medium">Step {index + 1}:</span> {step}
+            <span className="font-medium">
+              {t('steps.key')}{" "}
+               {index + 1}{" "}:</span> {step}
           </div>
         </motion.div>
       ))}
