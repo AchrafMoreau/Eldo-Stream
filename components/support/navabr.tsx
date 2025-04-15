@@ -31,7 +31,7 @@ export default function Navbar() {
     {
       id:"faqs",
       title: "FAQ",
-      href: "/support/faq",
+      href: "/support/faqs",
     },
     {
       id:"installation-guide",

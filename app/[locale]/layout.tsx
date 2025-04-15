@@ -27,6 +27,9 @@ export default async function RootLayout(props: {
 
   return (
     <html lang={locale}>
+      <header>
+        <meta name="google-site-verification" content="4nhcBoMPTZ8LjwoxxcnTEvVwod94yFyEqdlBupiy_xQ" />
+      </header>
       <body>
         <NextIntlClientProvider
           messages={messages} 

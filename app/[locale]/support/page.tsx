@@ -16,7 +16,7 @@ export default function SupportPage() {
       title: "FAQ",
       description: "Find answers to commonly asked questions",
       icon: HelpCircle,
-      href: "/support/faq",
+      href: "/support/faqs",
     },
     {
       title: "Installation Guide",
