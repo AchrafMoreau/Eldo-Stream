@@ -17,7 +17,7 @@ export default function SchemaMarkup() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-555-123-4567",
+      telephone: "+34 604 29 49 74",
       contactType: "customer service",
       availableLanguage: ["English", "Spanish"],
     },

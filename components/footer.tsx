@@ -49,7 +49,7 @@ export default function Footer() {
               Your gateway to unlimited entertainment with thousands of channels and on-demand content.
             </p>
             <div className="flex space-x-3">
-              <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary">
+              <Link href="https://www.facebook.com/profile.php?id=61577166609291" aria-label="Facebook" className="text-muted-foreground hover:text-primary">
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary">
@@ -94,11 +94,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">+34 604 29 49 74</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">support@iptvpremium.com</span>
+                <span className="text-muted-foreground">eldoiptv@gmail.com</span>
               </li>
             </ul>
 

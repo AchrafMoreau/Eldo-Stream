@@ -37,7 +37,7 @@ function HeroSection() {
 
 
   const handelFreeTrail = () => {
-    const formattedPhone = "+212713720920";
+    const formattedPhone = "+34604294974";
     const message = `i need free trail please`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodedMessage}`;

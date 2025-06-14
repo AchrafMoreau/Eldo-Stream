@@ -46,7 +46,7 @@ export default function Navbar() {
   const t = useTranslations()
 
   const handelGetStarted = () => {
-    const phoneNumber = "+212713720920" // Replace with your actual WhatsApp number
+    const phoneNumber = "+34604294974" // Replace with your actual WhatsApp number
     window.open(`https://wa.me/${phoneNumber}?`, "_blank")
   }
   // Smooth scroll to section with improved behavior

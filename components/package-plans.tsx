@@ -14,7 +14,7 @@ export default function PackagePlans() {
 
   // Function to redirect to WhatsApp with custom message for each package
   const redirectToWhatsApp = (packageName: string, price: number) => {
-    const phoneNumber = "+212713720920" // Replace with your actual WhatsApp number
+    const phoneNumber = "+34604294974" // Replace with your actual WhatsApp number
 
     // Create different messages for each package
     const message = t('ctaMessage',{
@@ -147,9 +147,9 @@ export default function PackagePlans() {
                 </CardHeader>
                 <CardContent className="pb-4 flex-1">
                   <div className="mb-6">
-                    <span className="text-4xl font-bold">${plan.price.toFixed(2)}</span>
+                    <span className="text-4xl font-bold">€{plan.price.toFixed(2)}</span>
                     <div className="text-muted-foreground text-sm mt-1">
-                      {plan.savings && <span className="line-through">${plan.regularPrice.toFixed(2)}</span>}
+                      {plan.savings && <span className="line-through">€{plan.regularPrice.toFixed(2)}</span>}
                     </div>
                   </div>
                   <ul className="space-y-2.5">
